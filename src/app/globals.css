@@ -6,6 +6,13 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --primary: 0, 0%, 100%;
+  --secondary: 0, 0%, 0%;
+  --dim: 0, 0%, 100%, 0.5;
+  --dark: 0, 0%, 100%, 0.1;
+  --success: 128, 100%, 50%;
+  --danger: 0, 100%, 50%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,4 +37,80 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.test {
+  background: rgb(0, 0, 0);
+  background: rgb(15, 15, 15);
+  background: rgb(30, 16, 40);
+  background: rgb(183, 13, 143);
+  background: rgb(30, 16, 40);
+  background: rgb(130, 65, 70);
+  background: rgb(183, 153, 33);
+  background: rgb(130, 65, 70);
+
+  background: rgb(130, 65, 70);
+}
+
+/* hamberger */
+.hamburger {
+  cursor: pointer;
+  --burger-transition: 800ms;
+}
+
+.hamburger svg {
+  height: 60px;
+  width: 60px;
+  transition: transform var(--burger-transition) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger .line {
+  fill: none;
+  stroke: hsl(var(--primary));
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1;
+  transition: stroke-dasharray var(--burger-transition)
+      cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset var(--burger-transition) cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hamburger .line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+.hamburgerClose svg {
+  transform: rotate(-45deg);
+}
+
+.hamburgerClose svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+/* hover up */
+.hover-up {
+  position: relative;
+  transition: padding-left 250ms;
+  border-bottom: 1px solid hsl(var(--dark));
+}
+.hover-up::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  /* background: hsl(var(--primary)); */
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  z-index: -1;
+  transition: transform 450ms ease-out, background 700ms;
+}
+.hover-up:hover {
+  color: hsl(var(--primary));
+  padding-left: 5rem;
+}
+.hover-up:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+  background: hsl(var(--primary));
 }
