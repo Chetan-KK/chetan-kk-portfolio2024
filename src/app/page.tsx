@@ -14,8 +14,6 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
 
 export default function Home() {
-  const [count, setCount] = useState<number>(0);
-
   const container = useRef(null);
 
   const loaderDealy = 1;
@@ -98,21 +96,7 @@ export default function Home() {
     { scope: container }
   );
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((prevCount) => {
-        const updatedCount = prevCount + 1;
-        if (updatedCount > 99) {
-          clearInterval(interval);
-        }
-        return updatedCount;
-      });
-    }, 10);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="min-h-screen" ref={container}>
@@ -121,7 +105,7 @@ export default function Home() {
         <div
           className={cn(
             bebasNeue.className,
-            "overflow-hidden loader-container z-40 h-screen w-screen fixed top-0 left-0 bg-black "
+            "overflow-hidden loader-container z-40 h-screen w-screen fixed top-0 left-0 bg-secondary"
           )}
         >
           <div className="bg-year translate-y-12 opacity-0 h-full grid place-content-center text-dark text-[25rem]">

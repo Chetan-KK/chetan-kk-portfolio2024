@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { poppins } from "@/lib/fonts";
-import { BackgroundGradientAnimation } from "@/Components/background-gradient-animation";
 import Cursor from "@/Components/cursor/cursor";
 import { cn } from "@/lib/utils";
-import SmoothScroll from "@/Components/SmoothScroll";
+import { LenisProvider } from "@/lib/contexts/LenisContext";
 
 export const metadata: Metadata = {
   title: "Chetan-KK-portfolio-2024",
@@ -19,10 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("antialiased", poppins.className)}>
-        <SmoothScroll />
-        <Cursor />
-        <div className="fixed top-0 left-0 overflow-hidden -z-50">
-          {/* <BackgroundGradientAnimation
+        <LenisProvider>
+          <Cursor />
+          <div className="fixed top-0 left-0 overflow-hidden -z-50">
+            {/* <BackgroundGradientAnimation
             gradientBackgroundStart="rgb(0,0,0)"
             gradientBackgroundEnd="rgb(10,10,10)"
             firstColor="30, 16, 40"
@@ -32,8 +31,9 @@ export default function RootLayout({
             fifthColor="183, 153, 33"
             pointerColor="130, 65, 70"
           /> */}
-        </div>
-        {children}
+          </div>
+          {children}
+        </LenisProvider>
       </body>
     </html>
   );
