@@ -28,14 +28,12 @@ export const LenisProvider = ({ children }) => {
     }, []);
 
     const lenisStart = () => {
-        console.log('staring');
         if (lenisRef.current) {
             lenisRef.current.start();
         }
     };
 
     const lenisStop = () => {
-        console.log('stopiing');
         if (lenisRef.current) {
             lenisRef.current.stop();
         }

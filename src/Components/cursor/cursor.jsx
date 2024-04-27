@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowForwardRounded";
 import cursorClassApplier from "@/lib/cursorClassApplier";
+import PhArrowSquareInLight from "@/assets/PhArrowSquareInLight";
 
 const Cursor = () => {
   const normalCursorX = useMotionValue(-100);
@@ -48,7 +49,7 @@ const Cursor = () => {
   }, [normalCursorX, normalCursorY]);
 
   useEffect(() => {
-    cursorClassApplier();
+    //  cursorClassApplier();
   }, []);
 
   return (
@@ -64,10 +65,11 @@ const Cursor = () => {
         }}
       >
         {innerData === "project" && (
-          <MaterialSymbolsArrowForwardRounded
-            className="text-4xl -rotate-45"
-            style={{ scale: innerData === "project" ? 1 : 0 }}
-          />
+          <MaterialSymbolsArrowForwardRounded className="text-4xl  transition-all duration-500" />
+        )}
+
+        {innerData === "link" && (
+          <PhArrowSquareInLight className="text-4xl transition-all duration-500" />
         )}
       </motion.div>
     </>

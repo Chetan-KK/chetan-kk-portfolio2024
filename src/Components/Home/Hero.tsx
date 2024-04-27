@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef } from "react";
+import { Parallax } from "react-scroll-parallax";
 
 const Hero2 = () => {
   const container = useRef(null);
@@ -36,39 +37,59 @@ const Hero2 = () => {
 
   return (
     <div ref={container} className="mt-28 px-10 mb-80">
-      <div className="overflow-hidden">
+      <Parallax
+        speed={10}
+        translateY={[0, 0]}
+        translateX={["-400px", "100px"]}
+        className="overflow-hidden"
+      >
         <div className={cn(poppins.className, "slide-bottom font-light")}>
-          {"Hello, I'm"}
+          {"👋🏻 Hello, I'm"}
         </div>
-      </div>
-      <div className="overflow-hidden">
+      </Parallax>
+      <Parallax
+        speed={10}
+        translateY={[0, 0]}
+        translateX={["-200px", "100px"]}
+        className="overflow-hidden"
+      >
         <div
           className={cn(
             poppins.className,
-            "slide-bottom font-bold uppercase text-7xl"
+            "slide-bottom font-bold uppercase text-8xl"
           )}
         >
           Chetan Khulage
         </div>
-      </div>
+      </Parallax>
       <div className="flex">
-        <div className="overflow-hidden">
+        <Parallax
+          speed={10}
+          translateY={[0, 0]}
+          translateX={["100px", "-100px"]}
+          className="overflow-hidden"
+        >
           <span
             className={cn(poppins.className, "slide-bottom font-light mr-4")}
           >
             {"I'm a"}
           </span>
-        </div>
-        <div className="overflow-hidden">
+        </Parallax>
+        <Parallax
+          speed={10}
+          translateY={[0, 0]}
+          translateX={["100px", "-100px"]}
+          className="overflow-hidden"
+        >
           <div
             className={cn(
               bebasNeue.className,
-              "slide-bottom font-bold uppercase text-9xl text-dark"
+              "slide-bottom font-bold uppercase text-[9rem] leading-[1] whitespace-nowrap text-dark"
             )}
           >
             FrontEnd web Developer
           </div>
-        </div>
+        </Parallax>
       </div>
       <div className="overflow-hidden">
         <div

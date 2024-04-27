@@ -8,7 +8,13 @@ const cursorClassApplier = () => {
             const cursorAttribute = parentElement.getAttribute(
                 "data-attribute-cursor"
             );
-            if (cursorAttribute) {
+            const prevAttribute = child.getAttribute(
+                "data-attribute-cursor"
+            );
+            if (prevAttribute) {
+                child.setAttribute("data-attribute-cursor", prevAttribute);
+            }
+            else if (cursorAttribute) {
                 child.setAttribute("data-attribute-cursor", cursorAttribute);
             }
         });

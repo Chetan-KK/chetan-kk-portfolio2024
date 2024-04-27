@@ -35,6 +35,10 @@
   border-radius: 10px;
 }
 
+* {
+  cursor: none;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: url("/bg.png");
@@ -154,8 +158,8 @@ body {
 /* project-grid */
 .project-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: repeat(2, 15rem);
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(2, 13rem);
   place-items: center;
   gap: 1rem;
 }
