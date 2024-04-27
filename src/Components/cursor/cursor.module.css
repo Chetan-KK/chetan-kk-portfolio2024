@@ -10,6 +10,10 @@
 }
 .outer {
   /* border: 1px solid hsl(var(--dim)); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: hsl(var(--primary));
-  mix-blend-mode: difference;
+  color: hsl(var(--secondary));
+  /*mix-blend-mode: difference;*/
 }

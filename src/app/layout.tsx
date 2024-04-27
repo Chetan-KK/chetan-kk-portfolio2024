@@ -4,6 +4,8 @@ import { poppins } from "@/lib/fonts";
 import Cursor from "@/Components/cursor/cursor";
 import { cn } from "@/lib/utils";
 import { LenisProvider } from "@/lib/contexts/LenisContext";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Chetan-KK-portfolio-2024",
@@ -18,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("antialiased", poppins.className)}>
-        <LenisProvider>
+        <Providers>
           <Cursor />
           <div className="fixed top-0 left-0 overflow-hidden -z-50">
             {/* <BackgroundGradientAnimation
@@ -33,7 +35,7 @@ export default function RootLayout({
           /> */}
           </div>
           {children}
-        </LenisProvider>
+        </Providers>
       </body>
     </html>
   );

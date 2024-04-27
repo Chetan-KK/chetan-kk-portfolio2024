@@ -12,7 +12,7 @@ const Hero2 = () => {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({ delay: 7.5 });
+      const tl = gsap.timeline({ delay: 9.5 });
 
       tl.from(".slide-bottom", {
         y: 100,
@@ -35,7 +35,7 @@ const Hero2 = () => {
   );
 
   return (
-    <div ref={container} className="mt-28 px-10 overflow-hidden">
+    <div ref={container} className="mt-28 px-10 mb-80">
       <div className="overflow-hidden">
         <div className={cn(poppins.className, "slide-bottom font-light")}>
           {"Hello, I'm"}
@@ -81,7 +81,7 @@ const Hero2 = () => {
           experience
         </div>
       </div>
-      <div className="gsap-opacity absolute right-40 bottom-32 text-dim flex items-center uppercase animate-pulse hover:animate-none hover:text-primary transition-colors target">
+      <div className="gsap-opacity absolute right-32 top-[33rem] text-dim flex items-center uppercase animate-pulse hover:animate-none hover:text-primary transition-colors target">
         Scroll
         <svg
           className="target"

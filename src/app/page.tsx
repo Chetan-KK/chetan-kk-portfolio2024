@@ -10,6 +10,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
+import Projects from "@/Components/Home/Projects";
 
 gsap.registerPlugin(useGSAP);
 
@@ -24,6 +25,16 @@ export default function Home() {
       // start loader
       const tl = gsap.timeline({ delay: 0.5 });
 
+      tl.to(".bg-title", {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+      });
+      tl.to(".bg-title", {
+        scale: 2,
+        opacity: 0,
+        duration: 1,
+      });
       tl.to(".bg-year", {
         y: 0,
         opacity: 1,
@@ -57,6 +68,10 @@ export default function Home() {
       );
 
       // remove loader
+
+      tl.call(() => {
+        window.scrollTo(0, 0);
+      });
 
       tl.to(".loader", {
         clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
@@ -96,7 +111,7 @@ export default function Home() {
     { scope: container }
   );
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
 
   return (
     <div className="min-h-screen" ref={container}>
@@ -108,10 +123,10 @@ export default function Home() {
             "overflow-hidden loader-container z-40 h-screen w-screen fixed top-0 left-0 bg-secondary"
           )}
         >
+          <div className="scale-0 opacity-0 text-dim bg-title absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] uppercase text-7xl">
+            portfolio
+          </div>
           <div className="bg-year translate-y-12 opacity-0 h-full grid place-content-center text-dark text-[25rem]">
-            {/*<div className="absolute top-[70%] left-[50%] translate-x-[-50%] uppercase text-7xl">
-              portfolio
-        </div>*/}
             <div>2024</div>
           </div>
           <div className="count-slide text-7xl">
@@ -127,9 +142,10 @@ export default function Home() {
           alt="img"
           width={2880}
           height={5120}
-          className="absolute top-0 right-0"
+          className="absolute top-0 right-0 -z-30"
         />
         <Hero />
+        <Projects />
       </MaxWidthWrapper>
     </div>
   );
