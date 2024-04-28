@@ -3,9 +3,8 @@ import "./globals.css";
 import { poppins } from "@/lib/fonts";
 import Cursor from "@/Components/cursor/cursor";
 import { cn } from "@/lib/utils";
-import { LenisProvider } from "@/lib/contexts/LenisContext";
-import { ParallaxProvider } from "react-scroll-parallax";
 import { Providers } from "./providers";
+import Preloader from "@/Components/Preloader";
 
 export const metadata: Metadata = {
   title: "Chetan-KK-portfolio-2024",
@@ -34,6 +33,7 @@ export default function RootLayout({
             pointerColor="130, 65, 70"
           /> */}
           </div>
+          <Preloader />
           {children}
         </Providers>
       </body>

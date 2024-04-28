@@ -6,6 +6,7 @@ import { motion, useMotionValue } from "framer-motion";
 import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowForwardRounded";
 import cursorClassApplier from "@/lib/cursorClassApplier";
 import PhArrowSquareInLight from "@/assets/PhArrowSquareInLight";
+import MaterialSymbolsLightEyeTrackingOutlineSharp from "@/assets/MaterialSymbolsLightEyeTrackingOutlineSharp";
 
 const Cursor = () => {
   const normalCursorX = useMotionValue(-100);
@@ -55,21 +56,20 @@ const Cursor = () => {
   return (
     <>
       <motion.div
-        className={`${styles.cursor} ${styles.outer}`}
+        className={`${styles.cursor} ${styles.outer} ${
+          innerData ? styles.data : ""
+        } ${hovered ? styles.hovered : ""}`}
         style={{
-          width: `${hovered ? "64" : "26"}px`,
-          height: `${hovered ? "64" : "26"}px`,
           x: normalCursorX,
           y: normalCursorY,
-          mixBlendMode: `${innerData ? "normal" : "difference"}`,
         }}
       >
         {innerData === "project" && (
-          <MaterialSymbolsArrowForwardRounded className="text-4xl  transition-all duration-500" />
+          <MaterialSymbolsLightEyeTrackingOutlineSharp className="text-3xl  transition-all duration-500" />
         )}
 
         {innerData === "link" && (
-          <PhArrowSquareInLight className="text-4xl transition-all duration-500" />
+          <PhArrowSquareInLight className="text-3xl transition-all duration-500" />
         )}
       </motion.div>
     </>

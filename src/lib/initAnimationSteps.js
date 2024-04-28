@@ -17,7 +17,7 @@ export const FastFirstStep = {
 
 export const FastLeftStep = {
     hidden: {
-        x: 50,
+        x: 100,
         opacity: 0,
     },
     show: {
@@ -33,7 +33,7 @@ export const FastLeftStep = {
 
 export const FastRightStep = {
     hidden: {
-        x: -50,
+        x: -100,
         opacity: 0,
     },
     show: {

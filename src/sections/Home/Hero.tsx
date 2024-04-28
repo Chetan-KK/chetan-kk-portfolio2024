@@ -70,7 +70,10 @@ const Hero2 = () => {
           className="overflow-hidden"
         >
           <span
-            className={cn(poppins.className, "slide-bottom font-light mr-4")}
+            className={cn(
+              poppins.className,
+              "slide-bottom font-light mr-4 whitespace-nowrap"
+            )}
           >
             {"I'm a"}
           </span>

@@ -1,0 +1,17 @@
+.button {
+  background-color: hsl(var(--dark));
+  color: hsl(var(--primary));
+  width: fit-content;
+  white-space: nowrap;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px hsl(var(--border));
+  transition: 200ms;
+  font-weight: 700;
+}
+
+.button:hover,
+.button:active {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--secondary));
+  box-shadow: 0 0 0 10px hsl(var(--dim)), 0 0 0 20px hsl(var(--dark));
+}

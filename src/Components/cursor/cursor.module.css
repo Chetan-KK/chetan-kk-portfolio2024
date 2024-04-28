@@ -11,9 +11,21 @@
 .outer {
   /* border: 1px solid hsl(var(--dim)); */
   display: flex;
+  height: 26px;
+  width: 26px;
   justify-content: center;
   align-items: center;
   background-color: hsl(var(--primary));
   color: hsl(var(--secondary));
-  /*mix-blend-mode: difference;*/
+  mix-blend-mode: difference;
+  box-shadow: 0 0 0 5px hsl(var(--dark));
+}
+.data {
+  mix-blend-mode: normal;
+  box-shadow: 0 0 0 10px hsl(var(--dim)), 0 0 0 20px hsl(var(--dark));
+}
+.hovered {
+  height: 64px;
+  width: 64px;
+  box-shadow: 0 0 0 10px hsl(var(--dim)), 0 0 0 20px hsl(var(--dark));
 }

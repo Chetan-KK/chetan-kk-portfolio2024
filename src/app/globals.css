@@ -7,10 +7,11 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --primary: 0, 0%, 100%;
+  --primary: 0, 100%, 100%;
   --secondary: 0, 0%, 0%;
   --dim: 0, 0%, 100%, 0.5;
   --dark: 0, 0%, 100%, 0.1;
+  --border: 0, 50%, 100%, 0.3;
   --success: 128, 100%, 50%;
   --danger: 0, 100%, 50%;
 }
@@ -33,6 +34,11 @@
 ::-webkit-scrollbar-thumb {
   background-color: hsl(var(--dark));
   border-radius: 10px;
+}
+
+::selection {
+  background-color: transparent;
+  /* color: hsl; */
 }
 
 * {

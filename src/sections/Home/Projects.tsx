@@ -3,7 +3,7 @@
 import { bebasNeue } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
-import ParallaxText from "../ParallaxText";
+import ParallaxText from "../../Components/ParallaxText";
 import { Parallax } from "react-scroll-parallax";
 import fetchProjects from "@/lib/getData/GetProjects";
 import Link from "next/link";
@@ -12,6 +12,8 @@ import { motion } from "framer-motion";
 import { FastLeftStep, FastRightStep } from "@/lib/initAnimationSteps";
 import cursorClassApplier from "@/lib/cursorClassApplier";
 import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowForwardRounded";
+import SuperHeading from "../../Components/SuperHeading";
+import Button from "../../Components/Button/Button";
 
 interface Project {
   desc: string;
@@ -42,17 +44,7 @@ const Projects = () => {
 
   return (
     <div>
-      <Parallax speed={10} translateY={[0, 0]} translateX={["-100px", "100px"]}>
-        <div
-          className={cn(
-            bebasNeue.className,
-            "uppercase text-[13vw] 2xl:text-[14rem] text-center text-dim"
-          )}
-        >
-          Some Of my projects
-        </div>
-      </Parallax>
-      <ParallaxText baseVelocity={5}>showcase</ParallaxText>
+      <SuperHeading heading="Some Of my projects" subheading="showcase" />
 
       {/* project */}
       <div className="px-20">
@@ -62,7 +54,7 @@ const Projects = () => {
             variants={i % 2 == 0 ? FastRightStep : FastLeftStep}
             initial="hidden"
             whileInView="show"
-            className="project-box m-10 bg-secondary/30 p-5 rounded-3xl border-2 border-secondary/40"
+            className="project-box m-10 bg-secondary/30 p-5 rounded-3xl border-2 border-white/20"
           >
             <div className="flex flex-col gap-2">
               <div className="flex justify-between items-center">
@@ -73,14 +65,15 @@ const Projects = () => {
                 >
                   {project.title}
                 </Link>
-                <Link
+                <a
                   data-attribute-cursor="link"
-                  href={`project/${project.title}`}
+                  href={project.link}
+                  target="_blank"
                   className="target flex items-center"
                 >
                   Preview
                   <MaterialSymbolsArrowForwardRounded className="text-4xl -rotate-45" />
-                </Link>
+                </a>
               </div>
               <div className="flex justify-between  text-dim items-center">
                 <div className="flex gap-2">
@@ -131,8 +124,8 @@ const Projects = () => {
             </div>
           </motion.div>
         ))}
-        <Link href={"/allProjects"} className="target">
-          Explore all Projects
+        <Link href={"/projects"}>
+          <Button className="m-auto py-3 px-8">Explore all Projects</Button>
         </Link>
       </div>
     </div>
