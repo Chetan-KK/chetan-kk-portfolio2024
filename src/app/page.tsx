@@ -8,6 +8,9 @@ import Image from "next/image";
 import Projects from "@/sections/Home/Projects";
 import Services from "@/sections/Home/Services";
 import { Parallax } from "react-scroll-parallax";
+import About from "@/sections/Home/About";
+import Contact from "@/sections/Home/Contact";
+import Footer from "@/sections/Home/Footer";
 
 export default function Home() {
   // useEffect(() => {}, []);
@@ -29,6 +32,9 @@ export default function Home() {
         <Hero />
         <Projects />
         <Services />
+        <About />
+        <Contact />
+        <Footer />
       </MaxWidthWrapper>
     </div>
   );

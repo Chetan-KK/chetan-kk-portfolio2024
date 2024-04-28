@@ -37,8 +37,8 @@
 }
 
 ::selection {
-  background-color: transparent;
-  /* color: hsl; */
+  background-color: hsl(var(--primary));
+  color: hsl(var(--secondary));
 }
 
 * {
@@ -52,6 +52,11 @@ body {
   /* overflow: hidden; */
   background-color: hsl(var(--secondary));
   background-repeat: repeat-y;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
 }
 
 @layer utilities {

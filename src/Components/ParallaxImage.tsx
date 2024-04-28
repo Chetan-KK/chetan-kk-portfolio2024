@@ -1,13 +1,13 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Parallax } from "react-scroll-parallax";
+import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
 interface img {
   src: string;
   alt: any;
   height: number;
   width: number;
-  className: string;
+  className?: string;
 }
 
 const ParallaxImage = ({ src, alt, height, width, className }: img) => {

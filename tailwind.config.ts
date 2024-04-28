@@ -18,6 +18,7 @@ const config: Config = {
         secondary: "hsla(var(--secondary))",
 
         dim: "hsla(var(--dim))",
+        border: "hsla(var(--border))",
         dark: "hsla(var(--dark))",
 
         success: "hsl(var(--success))",

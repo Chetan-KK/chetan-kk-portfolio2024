@@ -4,12 +4,16 @@ import styles from "./button.module.css";
 const Button = ({
   children,
   className,
+  type,
 }: {
   children: ReactNode;
   className?: string;
+  type?: "submit" | "reset" | "button" | undefined;
 }) => {
   return (
-    <div className={`${styles.button} ${className} target`}>{children}</div>
+    <button type={type} className={`${styles.button} ${className} target`}>
+      {children}
+    </button>
   );
 };
 

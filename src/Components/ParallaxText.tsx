@@ -50,7 +50,7 @@ function ParallaxText({
   return (
     <div className="w-full overflow-hidden -translate-y-10">
       <motion.div
-        className="flex justify-center text-3xl text-dim font-bold whitespace-nowrap gap-3 uppercase"
+        className="flex justify-center text-3xl text-dim font-bold whitespace-nowrap gap-7 uppercase"
         style={{ x }}
       >
         <span>{children} </span>

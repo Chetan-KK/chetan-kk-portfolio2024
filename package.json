@@ -12,6 +12,7 @@
     "@gsap/react": "^2.1.1",
     "@motionone/utils": "^10.17.0",
     "@studio-freight/lenis": "^1.0.39",
+    "axios": "^1.6.8",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
     "gsap": "^3.12.5",

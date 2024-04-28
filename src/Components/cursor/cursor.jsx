@@ -4,7 +4,6 @@ import styles from "./cursor.module.css";
 import { useState, useEffect } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowForwardRounded";
-import cursorClassApplier from "@/lib/cursorClassApplier";
 import PhArrowSquareInLight from "@/assets/PhArrowSquareInLight";
 import MaterialSymbolsLightEyeTrackingOutlineSharp from "@/assets/MaterialSymbolsLightEyeTrackingOutlineSharp";
 
