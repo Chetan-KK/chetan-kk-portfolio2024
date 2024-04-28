@@ -23,7 +23,7 @@ const Footer = () => {
       <Image
         src={"/signName.svg"}
         alt="chetan khulage"
-        className="my-10"
+        className="my-10 h-auto w-auto"
         height={200}
         width={750}
       />

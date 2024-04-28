@@ -13,7 +13,7 @@ const SuperHeading = ({
 }) => {
   return (
     <div>
-      <Parallax speed={5}>
+      <Parallax speed={5} scale={[1, 1.1]}>
         <div
           className={cn(
             bebasNeue.className,

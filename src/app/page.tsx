@@ -13,21 +13,25 @@ import Contact from "@/sections/Home/Contact";
 import Footer from "@/sections/Home/Footer";
 
 export default function Home() {
-  // useEffect(() => {}, []);
-
   return (
     <div className="min-h-screen">
       <MaxWidthWrapper>
-        {/* preloader
-        <Preloader /> */}
-        {/* main body */}
         <Logo />
         <NavBar />
         <Parallax
           speed={-40}
+          rotateX={["0deg", "360deg"]}
+          rotateY={["0deg", "20deg"]}
+          rotateZ={["0deg", "20deg"]}
           className="absolute w-[70rem] top-0 right-0 -z-30"
         >
-          <Image src={"/grid.svg"} alt="img" width={2880} height={5120} />
+          <Image
+            src={"/grid.svg"}
+            alt="img"
+            width={100}
+            height={100}
+            className="w-full h-full"
+          />
         </Parallax>
         <Hero />
         <Projects />

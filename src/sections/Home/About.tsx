@@ -22,7 +22,9 @@ const About = () => {
             />
           </Parallax>
         </div>
-        <div
+        <Parallax
+          speed={20}
+          scale={[1, 1.5]}
           className={cn(
             bebasNeue.className,
             "text-center text-dark text-7xl mt-5"
@@ -30,7 +32,7 @@ const About = () => {
         >
           16 march
           <div className="text-[15rem]">2002</div>
-        </div>
+        </Parallax>
         <div className="absolute bottom-0 leading-10 text-xl text-justify left-[37%] text-white/90 w-[45rem]">
           <span className="text-6xl">H</span>ello everyone, my name is Chetan
           and I'm an experienced front-end developer with a specialization in

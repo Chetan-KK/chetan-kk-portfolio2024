@@ -14,3 +14,14 @@ export interface MyInfo {
     leetcode: string;
   };
 }
+
+export interface Project {
+  desc: string;
+  gitLink: string;
+  imgSrc: string;
+  imgs: string[];
+  link: string;
+  stack: string[];
+  title: string;
+  year: string;
+}

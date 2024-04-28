@@ -4,12 +4,13 @@ import axios from "axios";
 import Button from "@/Components/Button/Button";
 import { cn } from "@/lib/utils";
 import { bebasNeue } from "@/lib/fonts";
+import { Parallax } from "react-scroll-parallax";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [send, setSend] = useState(false);
   const [err, setErr] = useState(false);
-  const [validEmail, setValidEmail] = useState(true);
+  const [validEmail, setValidEmail] = useState(false);
   const [isEmailRequired, setIsEmailRequired] = useState(true);
   const [isMessageRequired, setIsMessageRequired] = useState(true);
 
@@ -88,7 +89,10 @@ const Contact = () => {
         action=""
         className="flex w-[60rem] m-auto flex-col gap-6 justify-center items-center"
       >
-        <div className="flex flex-col gap-2 w-full">
+        <Parallax
+          translateX={["30px", "-30px"]}
+          className="flex flex-col gap-2 w-full"
+        >
           <div className="flex justify-between items-center">
             <label className="text-dim" htmlFor="email">
               Email:
@@ -113,8 +117,11 @@ const Contact = () => {
             placeholder="something@gmail.com"
             required
           />
-        </div>
-        <div className="flex flex-col gap-2 w-full">
+        </Parallax>
+        <Parallax
+          translateX={["-30px", "30px"]}
+          className="flex flex-col gap-2 w-full"
+        >
           <div className="flex justify-between items-center">
             <label className="text-dim" htmlFor="message">
               Message:
@@ -133,7 +140,7 @@ const Contact = () => {
             name="message"
             id="message"
           ></textarea>
-        </div>
+        </Parallax>
 
         {err ? (
           <div

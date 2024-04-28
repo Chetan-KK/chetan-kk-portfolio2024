@@ -14,17 +14,7 @@ import cursorClassApplier from "@/lib/cursorClassApplier";
 import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowForwardRounded";
 import SuperHeading from "../../Components/SuperHeading";
 import Button from "../../Components/Button/Button";
-
-interface Project {
-  desc: string;
-  gitLink: string;
-  imgSrc: string;
-  imgs: string[];
-  link: string;
-  stack: string[];
-  title: string;
-  year: string;
-}
+import { Project } from "@/lib/getData/dataInterfaces";
 
 const Projects = () => {
   const [allProjects, setAllProjects] = useState<Project[]>([]);
