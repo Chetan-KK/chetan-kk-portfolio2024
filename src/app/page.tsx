@@ -19,6 +19,14 @@ export default function Home() {
         <Logo />
         <NavBar />
         <Parallax
+          speed={-100}
+          scale={[-2, 3]}
+          translateX={["100px", "400px"]}
+          className="absolute w-[70rem] top-0 right-0 -z-30"
+        >
+          <div className="absolute top-0 left-0 bg-[#2A132B] blur-2xl h-96 w-96 rounded-full"></div>
+        </Parallax>
+        <Parallax
           speed={-40}
           rotateX={["0deg", "360deg"]}
           rotateY={["0deg", "20deg"]}

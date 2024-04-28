@@ -15,6 +15,7 @@ import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowFor
 import SuperHeading from "../../Components/SuperHeading";
 import Button from "../../Components/Button/Button";
 import { Project } from "@/lib/getData/dataInterfaces";
+import ProjectSkeleton from "@/Components/skeletons/ProjectSkeleton";
 
 const Projects = () => {
   const [allProjects, setAllProjects] = useState<Project[]>([]);
@@ -39,7 +40,7 @@ const Projects = () => {
 
       {/* project */}
       <div className="px-20">
-        {allProjects.length > 0 &&
+        {allProjects ? (
           allProjects.slice(0, 2).map((project, i) => (
             <motion.div
               key={i}
@@ -115,7 +116,10 @@ const Projects = () => {
                   ))}
               </div>
             </motion.div>
-          ))}
+          ))
+        ) : (
+          <ProjectSkeleton />
+        )}
         <Link href={"/projects"} className="flex justify-center">
           <Button className=" py-3 px-8">Explore all Projects</Button>
         </Link>
