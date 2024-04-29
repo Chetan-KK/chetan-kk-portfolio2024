@@ -11,7 +11,10 @@ const Button = ({
   type?: "submit" | "reset" | "button" | undefined;
 }) => {
   return (
-    <button type={type} className={`${styles.button} ${className} target`}>
+    <button
+      type={type}
+      className={`${styles.button} ${className} target cursor-none`}
+    >
       {children}
     </button>
   );

@@ -5,6 +5,7 @@ import { menuAnim, perspective } from "./navAnim";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { bebasNeue } from "@/lib/fonts";
+import Available from "../Available";
 
 const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -42,6 +43,9 @@ const NavBar = () => {
 
   return (
     <div>
+      <div className="absolute top-[50%] translate-y-[-50%] right-[150%]">
+        <Available />
+      </div>
       <div
         onClick={() => {
           setIsActive(!isActive);

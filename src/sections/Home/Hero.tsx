@@ -22,12 +22,6 @@ const Hero2 = () => {
         stagger: 0.2,
         ease: "power2.out",
       });
-      tl.from(".gsap-opacity", {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-      });
       tl.then(() => {
         lenisStart();
       });
@@ -94,7 +88,7 @@ const Hero2 = () => {
           </div>
         </Parallax>
       </div>
-      <div className="overflow-hidden">
+      <Parallax speed={-10} className="overflow-hidden">
         <div
           className={cn(
             poppins.className,
@@ -104,8 +98,11 @@ const Hero2 = () => {
           with over <span className="text-7xl text-primary">4</span> years of
           experience
         </div>
-      </div>
-      <div className="gsap-opacity absolute right-32 top-[33rem] text-dim flex items-center uppercase animate-pulse hover:animate-none hover:text-primary transition-colors target">
+      </Parallax>
+      <Parallax
+        rotate={["0deg", "160deg"]}
+        className="gsap-opacity absolute right-32 top-[33rem] text-dim flex items-center uppercase animate-pulse hover:animate-none hover:text-primary transition-colors target"
+      >
         Scroll
         <svg
           className="target"
@@ -136,7 +133,7 @@ const Hero2 = () => {
           </defs>
         </svg>
         down
-      </div>
+      </Parallax>
     </div>
   );
 };

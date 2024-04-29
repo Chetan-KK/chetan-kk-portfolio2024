@@ -59,6 +59,41 @@ textarea:focus {
   outline: none;
 }
 
+.stoked-text {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: 5px;
+  overflow: hidden;
+  color: transparent;
+  transition: 0.45s;
+  -webkit-text-stroke: 1px hsl(var(--primary));
+}
+.stoked-text .inner {
+  display: inline-block;
+  transform: translateY(-100%);
+  transition: 0.45s cubic-bezier(0.29, 0.73, 0.74, 1.02);
+}
+.stoked-text .outer {
+  position: absolute;
+  transition: 0.45s cubic-bezier(0.29, 0.73, 0.74, 1.02);
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: hsl(var(--primary));
+  transform: translateY(100%);
+}
+
+.stoked-text:hover {
+  letter-spacing: 5px;
+}
+.stoked-text:hover .outer,
+.stoked-text:hover .inner {
+  transform: none;
+  letter-spacing: 5px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

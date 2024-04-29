@@ -170,12 +170,26 @@ const Contact = () => {
           <div className="uppercase text-4xl text-dim font-bold">
             let’s build something awesome together
           </div>
+
           <a
-            className={cn(bebasNeue.className, "target uppercase text-[7rem]")}
+            className={cn(
+              bebasNeue.className,
+              "target stoked-text target uppercase text-[7rem]"
+            )}
+            target="_blank"
             data-attribute-cursor="link"
             href="mailto:chetankhulage.dev@gmail.com"
           >
             chetankhulage.dev@gmail.com{" "}
+            <span
+              className="target outer"
+              data-attribute-cursor="link"
+              aria-hidden="true"
+            >
+              <span className="target inner" data-attribute-cursor="link">
+                chetankhulage.dev@gmail.com
+              </span>
+            </span>
           </a>
         </div>
       </form>

@@ -25,9 +25,10 @@ const Services = () => {
   return (
     <div className="mb-20">
       <SuperHeading heading="I can help you with" subheading="Things i do" />
-      <div className="grid grid-cols-3 gap-5 m-5 mx-20">
+      <div className="max-w-screen-xl grid grid-cols-3 gap-5 m-5 mx-auto">
         {data.map((service, i) => (
           <Parallax
+            rotate={i % 2 == 0 ? ["0deg", "-10deg"] : ["0deg", "10deg"]}
             translateX={i % 2 == 0 ? ["-100px", "0px"] : ["100px", "-0px"]}
             key={i}
             className={`${

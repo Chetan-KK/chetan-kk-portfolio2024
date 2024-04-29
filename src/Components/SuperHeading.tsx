@@ -12,7 +12,7 @@ const SuperHeading = ({
   subheading: string;
 }) => {
   return (
-    <div>
+    <div className="w-full overflow-hidden">
       <Parallax speed={5} scale={[1, 1.1]}>
         <div
           className={cn(
