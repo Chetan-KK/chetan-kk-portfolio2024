@@ -9,7 +9,7 @@ import { Parallax } from "react-scroll-parallax";
 
 const Hero2 = () => {
   const container = useRef(null);
-  const { lenisStop, lenisStart } = useLenis();
+  const { lenisStart, lenisStop } = useLenis();
 
   useGSAP(
     () => {
@@ -23,7 +23,7 @@ const Hero2 = () => {
         ease: "power2.out",
       });
       tl.then(() => {
-        lenisStart();
+        // lenisStart();
       });
     },
     { scope: container }
@@ -101,6 +101,9 @@ const Hero2 = () => {
       </Parallax>
       <Parallax
         rotate={["0deg", "160deg"]}
+        onClick={() => {
+          // lenisScrollTo("1000px");
+        }}
         className="gsap-opacity absolute right-32 top-[33rem] text-dim flex items-center uppercase animate-pulse hover:animate-none hover:text-primary transition-colors target"
       >
         Scroll

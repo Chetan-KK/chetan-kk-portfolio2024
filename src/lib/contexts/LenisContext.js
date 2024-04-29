@@ -39,11 +39,15 @@ export const LenisProvider = ({ children }) => {
         }
     };
 
-    useEffect(() => {
-        lenisStop();
-    }, []);
+
+    const lenisScrollTo = (targetElement) => {
+        if (targetElement) {
+            // lenisRef.current.scrollTo(targetElement);
+        }
+    };
+
     return (
-        <LenisContext.Provider value={{ lenisStart, lenisStop }}>
+        <LenisContext.Provider value={{ lenisStart, lenisStop, lenisScrollTo }}>
             {children}
         </LenisContext.Provider>
     );

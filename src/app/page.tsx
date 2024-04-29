@@ -11,8 +11,17 @@ import { Parallax } from "react-scroll-parallax";
 import About from "@/sections/Home/About";
 import Contact from "@/sections/Home/Contact";
 import Footer from "@/sections/Home/Footer";
+import { useLenis } from "@/lib/contexts/LenisContext";
+import { useEffect } from "react";
 
 export default function Home() {
+  // not working
+  const { lenisStart, lenisStop } = useLenis();
+
+  useEffect(() => {
+    lenisStop();
+  }, []);
+
   return (
     <div className="min-h-screen">
       <MaxWidthWrapper>
