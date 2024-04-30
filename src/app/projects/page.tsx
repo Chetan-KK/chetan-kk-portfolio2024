@@ -4,7 +4,7 @@ import MaxWidthWrapper from "@/Components/MaxWidthWrapper";
 import ProjectComponent from "@/Components/ProjectComponent";
 import ProjectSkeleton from "@/Components/skeletons/ProjectSkeleton";
 import SuperHeading from "@/Components/SuperHeading";
-import CursorClassApplier from "@/lib/CursorClassApplier";
+import cursorClassApplier from "@/lib/cursorClassApplier";
 import { Project } from "@/lib/getData/dataInterfaces";
 import fetchProjects from "@/lib/getData/GetProjects";
 import Footer from "@/sections/Home/Footer";
@@ -19,7 +19,7 @@ const AllProjects = () => {
     const data = await fetchProjects();
     setAllProjects(data);
     if (data) {
-      CursorClassApplier();
+      cursorClassApplier();
     }
   };
 

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import fetchProjects from "@/lib/getData/GetProjects";
 import Link from "next/link";
-import CursorClassApplier from "@/lib/CursorClassApplier";
+import cursorClassApplier from "@/lib/cursorClassApplier";
 import SuperHeading from "../../Components/SuperHeading";
 import Button from "../../Components/Button/Button";
 import { Project } from "@/lib/getData/dataInterfaces";
@@ -17,7 +17,7 @@ const Projects = () => {
     const data = await fetchProjects();
     setAllProjects(data);
     if (data) {
-      CursorClassApplier();
+      cursorClassApplier();
     }
   };
 
