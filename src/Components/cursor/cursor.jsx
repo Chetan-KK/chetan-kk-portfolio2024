@@ -49,7 +49,7 @@ const Cursor = () => {
   }, [normalCursorX, normalCursorY]);
 
   useEffect(() => {
-    //  cursorClassApplier();
+    //  Applier();
   }, []);
 
   return (

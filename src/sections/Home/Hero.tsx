@@ -23,7 +23,7 @@ const Hero2 = () => {
         ease: "power2.out",
       });
       tl.then(() => {
-        // lenisStart();
+        lenisStart();
       });
     },
     { scope: container }

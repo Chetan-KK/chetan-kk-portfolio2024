@@ -1,6 +1,7 @@
 "use client";
 
 import Lenis from '@studio-freight/lenis';
+import { usePathname } from 'next/navigation';
 import React, { createContext, useContext, useEffect, useRef } from 'react';
 
 // Create a new context
@@ -9,8 +10,9 @@ const LenisContext = createContext();
 export const useLenis = () => useContext(LenisContext);
 
 export const LenisProvider = ({ children }) => {
-
+    const pathname = usePathname();
     const lenisRef = useRef(null); // Ref to hold lenis instance
+
 
     useEffect(() => {
         lenisRef.current = new Lenis();
@@ -26,6 +28,10 @@ export const LenisProvider = ({ children }) => {
             lenisRef.current.stop(); // Stop lenis when component unmounts
         };
     }, []);
+
+    useEffect(() => {
+        lenisStart();
+    }, [pathname]);
 
     const lenisStart = () => {
         if (lenisRef.current) {
@@ -46,6 +52,9 @@ export const LenisProvider = ({ children }) => {
         }
     };
 
+    useEffect(() => {
+        lenisStop();
+    }, []);
     return (
         <LenisContext.Provider value={{ lenisStart, lenisStop, lenisScrollTo }}>
             {children}

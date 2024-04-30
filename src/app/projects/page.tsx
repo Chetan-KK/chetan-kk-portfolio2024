@@ -3,19 +3,23 @@
 import MaxWidthWrapper from "@/Components/MaxWidthWrapper";
 import ProjectComponent from "@/Components/ProjectComponent";
 import ProjectSkeleton from "@/Components/skeletons/ProjectSkeleton";
-import cursorClassApplier from "@/lib/cursorClassApplier";
+import SuperHeading from "@/Components/SuperHeading";
+import CursorClassApplier from "@/lib/CursorClassApplier";
 import { Project } from "@/lib/getData/dataInterfaces";
 import fetchProjects from "@/lib/getData/GetProjects";
+import Footer from "@/sections/Home/Footer";
 import React, { useEffect, useState } from "react";
 
-const page = () => {
+const AllProjects = () => {
+  // after refresh on page lenis is getting stoped because of preloader (remove preloader on other pages)
+
   const [allProjects, setAllProjects] = useState<Project[]>([]);
 
   const getProjects = async () => {
     const data = await fetchProjects();
     setAllProjects(data);
     if (data) {
-      cursorClassApplier();
+      CursorClassApplier();
     }
   };
 
@@ -25,17 +29,17 @@ const page = () => {
 
   return (
     <MaxWidthWrapper>
+      <SuperHeading heading="All Projects" subheading="All Projects" />
       {allProjects ? (
-        allProjects
-          .slice(0, 2)
-          .map((project, i) => (
-            <ProjectComponent key={i} project={project} index={i} />
-          ))
+        allProjects.map((project, i) => (
+          <ProjectComponent key={i} project={project} index={i} />
+        ))
       ) : (
         <ProjectSkeleton />
       )}
+      <Footer />
     </MaxWidthWrapper>
   );
 };
 
-export default page;
+export default AllProjects;

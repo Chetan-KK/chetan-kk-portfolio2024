@@ -1,3 +1,5 @@
+"use client";
+
 import SuperHeading from "@/Components/SuperHeading";
 import React, { useState } from "react";
 import axios from "axios";

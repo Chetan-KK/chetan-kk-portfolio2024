@@ -1,17 +1,9 @@
 "use client";
 
-import { bebasNeue } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
-import ParallaxText from "../../Components/ParallaxText";
-import { Parallax } from "react-scroll-parallax";
 import fetchProjects from "@/lib/getData/GetProjects";
 import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { FastLeftStep, FastRightStep } from "@/lib/initAnimationSteps";
-import cursorClassApplier from "@/lib/cursorClassApplier";
-import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowForwardRounded";
+import CursorClassApplier from "@/lib/CursorClassApplier";
 import SuperHeading from "../../Components/SuperHeading";
 import Button from "../../Components/Button/Button";
 import { Project } from "@/lib/getData/dataInterfaces";
@@ -25,7 +17,7 @@ const Projects = () => {
     const data = await fetchProjects();
     setAllProjects(data);
     if (data) {
-      cursorClassApplier();
+      CursorClassApplier();
     }
   };
 

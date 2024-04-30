@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { poppins } from "@/lib/fonts";
-import Cursor from "@/Components/cursor/cursor";
+import Cursor from "@/Components/cursor/Cursor";
 import { cn } from "@/lib/utils";
-import { Providers } from "./providers";
+import { Providers } from "./Providers";
 import Preloader from "@/Components/Preloader";
 
 export const metadata: Metadata = {
