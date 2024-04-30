@@ -1,4 +1,4 @@
-const CursorClassApplier = () => {
+const cursorClassApplier = () => {
     const parentElements = document.querySelectorAll(".target");
 
     parentElements.forEach((parentElement) => {
@@ -21,4 +21,4 @@ const CursorClassApplier = () => {
     });
 };
 
-export default CursorClassApplier;
+export default cursorClassApplier;
