@@ -84,8 +84,8 @@ const Contact = () => {
     <div>
       <SuperHeading heading="Connect with me" subheading="contact" />
       <div className="text-dim uppercase w-[60rem] m-auto text-4xl font-bold my-10 leading-10">
-        I'm open for freelance projects, feel free to email me to see how can we
-        collaborate.
+        I&apos;m open for freelance projects, feel free to email me to see how
+        can we collaborate.
       </div>
       <form
         onSubmit={formSubmit}

@@ -35,9 +35,9 @@ const About = () => {
         </Parallax>
         <div className="absolute bottom-0 leading-10 text-xl text-justify left-[37%] text-white/90 w-[45rem]">
           <span className="text-6xl">H</span>ello everyone, my name is Chetan
-          and I'm an experienced front-end developer with a specialization in
-          THREE JS development and motion design for the web. With around three
-          years of experience in web development, I have gained extensive
+          and I&apos;m an experienced front-end developer with a specialization
+          in THREE JS development and motion design for the web. With around
+          three years of experience in web development, I have gained extensive
           knowledge of several programming languages and tools, including
           JavaScript, React, GSAP, Vite.js, Node.js, Express.js, Tailwind,
           Chart.js, and version control tools like Git and GitHub. I also
