@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { poppins } from "@/lib/fonts";
-import Cursor from "@/Components/cursor/Cursor";
+// import Cursor from "@/Components/cursor/Cursor";
 import { cn } from "@/lib/utils";
-import { Providers } from "./Providers";
+// import { Providers } from "./Providers";
 import Preloader from "@/Components/Preloader";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { LenisProvider } from "@/lib/contexts/LenisContext";
