@@ -12,10 +12,10 @@ const Cursor = () => {
   const normalCursorY = useMotionValue(-100);
 
   const [hovered, setHovered] = useState(false);
-  const [innerData, setInnerData] = useState(null);
+  const [innerData, setInnerData] = useState<string | null>(null);
 
   useEffect(() => {
-    const moveCursor = (e) => {
+    const moveCursor = (e: MouseEvent) => {
       const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
       if (hoveredElement && hoveredElement.classList.contains("target")) {
         setHovered(true);

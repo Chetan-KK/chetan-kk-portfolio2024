@@ -3,7 +3,7 @@ import "./globals.css";
 import { poppins } from "@/lib/fonts";
 import Cursor from "@/Components/cursor/Cursor";
 import { cn } from "@/lib/utils";
-import { Providers } from "./Providers";
+import Providers from "./Providers";
 import Preloader from "@/Components/Preloader";
 
 export const metadata: Metadata = {

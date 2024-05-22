@@ -20,7 +20,7 @@ export default function Home() {
       <MaxWidthWrapper>
         <Logo />
         <NavBar />
-        {/* <Parallax
+        <Parallax
           speed={-40}
           rotateX={["0deg", "360deg"]}
           rotateY={["0deg", "20deg"]}
@@ -34,13 +34,13 @@ export default function Home() {
             height={100}
             className="w-full h-full"
           />
-        </Parallax> */}
-        {/* <Hero />
+        </Parallax>
+        <Hero />
         <Projects />
         <Services />
         <About />
         <Contact />
-        <Footer /> */}
+        <Footer />
       </MaxWidthWrapper>
     </div>
   );
