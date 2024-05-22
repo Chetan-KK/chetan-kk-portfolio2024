@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("antialiased", poppins.className)}>
         <Providers>
-          <Cursor />
+          {/* <Cursor /> */}
           <div className="fixed top-0 left-0 overflow-hidden -z-50">
             {/* <BackgroundGradientAnimation
             gradientBackgroundStart="rgb(0,0,0)"
