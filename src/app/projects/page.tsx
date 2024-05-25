@@ -1,6 +1,8 @@
 "use client";
 
+import Logo from "@/Components/Logo";
 import MaxWidthWrapper from "@/Components/MaxWidthWrapper";
+import NavBar from "@/Components/Navbar/NavBar";
 import ProjectComponent from "@/Components/ProjectComponent";
 import ProjectSkeleton from "@/Components/skeletons/ProjectSkeleton";
 import SuperHeading from "@/Components/SuperHeading";
@@ -37,7 +39,8 @@ const AllProjects = () => {
 
   return (
     <MaxWidthWrapper>
-      {/* <RouterAnimation> */}
+      <Logo />
+      <NavBar />
       <SuperHeading heading="All Projects" subheading="All Projects" />
       {allProjects ? (
         allProjects.map((project, i) => (
@@ -47,7 +50,6 @@ const AllProjects = () => {
         <ProjectSkeleton />
       )}
       <Footer />
-      {/* </RouterAnimation> */}
     </MaxWidthWrapper>
   );
 };

@@ -120,13 +120,13 @@ const Preloader = () => {
           "loader-container overflow-hidden z-40 h-screen w-screen fixed top-0 left-0 bg-secondary"
         )}
       >
-        <div className="scale-0 opacity-0 text-dim bg-title absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] uppercase text-7xl">
+        <div className="scale-0 opacity-0 text-dim bg-title absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] uppercase sm:text-7xl text-5xl">
           portfolio
         </div>
-        <div className="bg-year translate-y-12 opacity-0 h-full grid place-content-center text-dark text-[25rem]">
+        <div className="bg-year translate-y-12 opacity-0 h-full grid place-content-center text-dark md:text-[25rem] text-[10rem]">
           <div>2024</div>
         </div>
-        <div className="count-slide text-7xl">
+        <div className="count-slide sm:text-7xl text-3xl">
           <span className="count">0</span>%
         </div>
         <div className="loader"></div>

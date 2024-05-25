@@ -33,7 +33,7 @@ const About = () => {
           16 march
           <div className="text-[15rem]">2002</div>
         </Parallax>
-        <div className="absolute bottom-0 leading-10 text-xl text-justify left-[37%] text-white/90 w-[45rem]">
+        <div className="absolute bottom-0 leading-10 text-xl text-justify xl:left-[37%] left-[20%] text-white/90 w-[45rem]">
           <span className="text-6xl">H</span>ello everyone, my name is Chetan
           and I&apos;m an experienced front-end developer with a specialization
           in THREE JS development and motion design for the web. With around

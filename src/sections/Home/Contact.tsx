@@ -113,9 +113,11 @@ const Contact = () => {
             id="email"
             onChange={handleEmailCheck}
             className={`${
-              validEmail
-                ? "border-green-600 active:border-green-600 focus:border-green-600"
-                : "border-red-600  active:border-red-600 focus:border-red-600"
+              !isEmailRequired
+                ? validEmail
+                  ? "border-green-600 active:border-green-600 focus:border-green-600"
+                  : "border-red-600  active:border-red-600 focus:border-red-600"
+                : ""
             } target w-full px-4 py-2 border-2 rounded-lg active:border-primary focus:border-primary hover:border-primary transition-all duration-300 bg-secondary/10`}
             placeholder="something@gmail.com"
             required

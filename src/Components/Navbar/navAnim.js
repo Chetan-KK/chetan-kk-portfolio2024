@@ -2,13 +2,15 @@ export const menuAnim = {
     open: {
         width: "100vw",
         height: "100vh",
+        "paddingTop": "4rem",
         top: "0",
         right: "0",
         transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] }
     },
     closed: {
         width: "100vw",
-        height: "0",
+        height: "0vh",
+        "paddingTop": "0",
         top: "0px",
         right: "0px",
         transition: { duration: 0.75, delay: 0.45, type: "tween", ease: [0.76, 0, 0.24, 1] }

@@ -50,10 +50,10 @@ const NavBar = () => {
         onClick={() => {
           setIsActive(!isActive);
         }}
-        className="fixed right-8 top-4 z-30"
+        className="fixed sm:right-8 right-4 sm:top-4 top-2 z-30"
       >
         <div className={isActive ? "hamburger hamburgerClose" : "hamburger"}>
-          <svg viewBox="0 0 32 32" className="target">
+          <svg viewBox="0 0 32 32" className="target sm:h-14 h-11 sm:w-14 w-11">
             <path
               className="target line line-top-bottom"
               d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
@@ -66,7 +66,7 @@ const NavBar = () => {
         variants={menuAnim}
         animate={isActive ? "open" : "closed"}
         initial="closed"
-        className="z-20 flex flex-col justify-center w-screen fixed top-0 left-0 bg-secondary overflow-hidden"
+        className="z-20 flex flex-col sm:justify-center w-screen sm:pt-0 fixed top-0 left-0 bg-secondary overflow-hidden"
       >
         <AnimatePresence>
           {isActive &&
@@ -78,7 +78,7 @@ const NavBar = () => {
                   initial="initial"
                   animate="enter"
                   exit="exit"
-                  className="target hover-up p-3 pl-10 text-dim uppercase font-bold text-7xl"
+                  className="target hover-up sm:p-3 p-2 sm:pl-10 pl-5 text-dim uppercase font-bold sm:text-7xl text-2xl"
                 >
                   {link.name}
                 </motion.div>
@@ -88,7 +88,7 @@ const NavBar = () => {
         <div
           className={cn(
             bebasNeue.className,
-            "absolute -bottom-52 text-dark -z-10 right-0 text-[25rem]"
+            "absolute sm:-bottom-52 -bottom-10 text-dark -z-10 sm:right-0 right-5 sm:text-[25rem] text-[10rem]"
           )}
         >
           2024

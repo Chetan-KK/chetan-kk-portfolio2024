@@ -36,7 +36,7 @@ const Hero2 = () => {
   );
 
   return (
-    <div ref={container} className="mt-28 px-10 mb-80">
+    <div ref={container} className="mt-28 sm:pl-10 lg:pl-5 pl-3 mb-80">
       <Parallax
         speed={10}
         translateY={[0, 0]}
@@ -56,13 +56,13 @@ const Hero2 = () => {
         <div
           className={cn(
             poppins.className,
-            "slide-bottom font-bold uppercase text-8xl"
+            "slide-bottom font-bold uppercase lg:text-8xl text-6xl"
           )}
         >
           Chetan Khulage
         </div>
       </Parallax>
-      <div className="flex">
+      <div className="lg:flex sm:ml-10 lg:ml-0 xs:ml-14 ml-6 mt-3 xs:mt-0">
         <Parallax
           speed={10}
           translateY={[0, 0]}
@@ -87,22 +87,28 @@ const Hero2 = () => {
           <div
             className={cn(
               bebasNeue.className,
-              "slide-bottom font-bold uppercase text-[9rem] leading-[1] whitespace-nowrap text-dark"
+              "slide-bottom font-bold uppercase sm:text-[11vw] text-5xl leading-[1] sm:whitespace-nowrap text-dark"
             )}
           >
             FrontEnd web Developer
           </div>
         </Parallax>
       </div>
-      <Parallax speed={-10} className="overflow-hidden">
+      <Parallax
+        speed={-10}
+        className="overflow-hidden xs:pl-5 pl-2 mt-10 xs:mt-0"
+      >
         <div
           className={cn(
             poppins.className,
-            "slide-bottom font-bold uppercase text-dim text-5xl"
+            "slide-bottom font-bold uppercase text-dim lg:text-5xl sm:text-3xl"
           )}
         >
-          with over <span className="text-7xl text-primary">4</span> years of
-          experience
+          with over{" "}
+          <span className="lg:text-7xl sm:text-5xl text-3xl text-primary">
+            4
+          </span>{" "}
+          years of experience
         </div>
       </Parallax>
       <Parallax
@@ -110,11 +116,11 @@ const Hero2 = () => {
         onClick={() => {
           // lenisScrollTo("1000px");
         }}
-        className="gsap-opacity absolute right-32 top-[33rem] text-dim flex items-center uppercase animate-pulse hover:animate-none hover:text-primary transition-colors target"
+        className="gsap-opacity absolute right-10 xs:right-32 top-[33rem] text-xs xs:text-base text-dim flex items-center uppercase animate-pulse hover:animate-none hover:text-primary transition-colors target"
       >
         Scroll
         <svg
-          className="target"
+          className="target xs:h-auto xs:w-auto h-7 w-7"
           width="35"
           height="35"
           viewBox="0 0 68 68"

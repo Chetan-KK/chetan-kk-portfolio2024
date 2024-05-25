@@ -15,3 +15,14 @@
   color: hsl(var(--secondary));
   box-shadow: 0 0 0 10px hsl(var(--dim)), 0 0 0 20px hsl(var(--dark));
 }
+
+@media screen and (max-width: 500px) {
+  .button {
+    font-size: 0.8rem;
+    border-radius: 5px;
+  }
+  .button:hover,
+  .button:active {
+    box-shadow: 0 0 0 5px hsl(var(--dim)), 0 0 0 10px hsl(var(--dark));
+  }
+}

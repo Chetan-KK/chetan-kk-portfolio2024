@@ -17,7 +17,7 @@ export const FastFirstStep = {
 
 export const FastLeftStep = {
     hidden: {
-        x: 100,
+        x: 20,
         opacity: 0,
     },
     show: {
@@ -26,14 +26,14 @@ export const FastLeftStep = {
         transition: {
             type: "spring",
             stiffness: 60,
-            delay: .2,
+            delay: .1,
         },
     },
 };
 
 export const FastRightStep = {
     hidden: {
-        x: -100,
+        x: -20,
         opacity: 0,
     },
     show: {
@@ -42,7 +42,7 @@ export const FastRightStep = {
         transition: {
             type: "spring",
             stiffness: 60,
-            delay: .2,
+            delay: .1,
         },
     },
 };

@@ -30,7 +30,7 @@ const Projects = () => {
       <SuperHeading heading="Some Of my projects" subheading="showcase" />
 
       {/* project */}
-      <div className="px-20" id="scrollDown">
+      <div className="lg:px-20 sm:px-10 px-2" id="scrollDown">
         {allProjects ? (
           allProjects
             .slice(0, 2)
@@ -41,7 +41,9 @@ const Projects = () => {
           <ProjectSkeleton />
         )}
         <Link href={"/projects"} className="flex justify-center">
-          <Button className=" py-3 px-8">Explore all Projects</Button>
+          <Button className="sm:py-3 py-2 sm:px-8 px-5 sm:mb-0 mb-10">
+            Explore all Projects
+          </Button>
         </Link>
       </div>
     </div>

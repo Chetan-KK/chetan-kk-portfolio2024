@@ -3,11 +3,13 @@ import styles from "./cursor.module.css";
 
 import { useState, useEffect } from "react";
 import { motion, useMotionValue } from "framer-motion";
-import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowForwardRounded";
 import PhArrowSquareInLight from "@/assets/PhArrowSquareInLight";
 import MaterialSymbolsLightEyeTrackingOutlineSharp from "@/assets/MaterialSymbolsLightEyeTrackingOutlineSharp";
+import { useScreenSize } from "@/lib/contexts/ScreenSizeContext";
 
 const Cursor = () => {
+  const screenSize = useScreenSize();
+
   const normalCursorX = useMotionValue(-100);
   const normalCursorY = useMotionValue(-100);
 
@@ -15,6 +17,8 @@ const Cursor = () => {
   const [innerData, setInnerData] = useState<string | null>(null);
 
   useEffect(() => {
+    console.log("size", screenSize);
+
     const moveCursor = (e: MouseEvent) => {
       const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
       if (hoveredElement && hoveredElement.classList.contains("target")) {
@@ -54,23 +58,25 @@ const Cursor = () => {
 
   return (
     <>
-      <motion.div
-        className={`${styles.cursor} ${styles.outer} ${
-          innerData ? styles.data : ""
-        } ${hovered ? styles.hovered : ""}`}
-        style={{
-          x: normalCursorX,
-          y: normalCursorY,
-        }}
-      >
-        {innerData === "project" && (
-          <MaterialSymbolsLightEyeTrackingOutlineSharp className="text-3xl  transition-all duration-500" />
-        )}
+      {screenSize > 800 && (
+        <motion.div
+          className={`${styles.cursor} ${styles.outer} ${
+            innerData ? styles.data : ""
+          } ${hovered ? styles.hovered : ""}`}
+          style={{
+            x: normalCursorX,
+            y: normalCursorY,
+          }}
+        >
+          {innerData === "project" && (
+            <MaterialSymbolsLightEyeTrackingOutlineSharp className="text-3xl  transition-all duration-500" />
+          )}
 
-        {innerData === "link" && (
-          <PhArrowSquareInLight className="text-3xl transition-all duration-500" />
-        )}
-      </motion.div>
+          {innerData === "link" && (
+            <PhArrowSquareInLight className="text-3xl transition-all duration-500" />
+          )}
+        </motion.div>
+      )}
     </>
   );
 };
