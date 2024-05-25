@@ -21,8 +21,8 @@ export default function RootLayout({
       <body className={cn("antialiased", poppins.className)}>
         <Providers>
           <Cursor />
-          <div className="fixed top-0 left-0 overflow-hidden -z-50">
-            {/* <BackgroundGradientAnimation
+          {/* <div className="fixed top-0 left-0 overflow-hidden -z-50"> */}
+          {/* <BackgroundGradientAnimation
             gradientBackgroundStart="rgb(0,0,0)"
             gradientBackgroundEnd="rgb(10,10,10)"
             firstColor="30, 16, 40"
@@ -32,7 +32,7 @@ export default function RootLayout({
             fifthColor="183, 153, 33"
             pointerColor="130, 65, 70"
           /> */}
-          </div>
+          {/* </div> */}
           <Preloader />
           {children}
         </Providers>

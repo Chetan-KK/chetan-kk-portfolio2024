@@ -6,14 +6,17 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef } from "react";
 import { Parallax } from "react-scroll-parallax";
+import { usePreloader } from "@/lib/contexts/PreloaderContext";
 
 const Hero2 = () => {
   const container = useRef(null);
-  const { lenisStart, lenisStop } = useLenis();
+  const { lenisStart, lenisStop, lenisRef } = useLenis();
+
+  const { isPreloaderShown } = usePreloader();
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({ delay: 9.5 });
+      const tl = gsap.timeline({ delay: isPreloaderShown ? 0.5 : 9.5 });
 
       tl.from(".slide-bottom", {
         y: 100,
@@ -23,7 +26,10 @@ const Hero2 = () => {
         ease: "power2.out",
       });
       tl.then(() => {
-        lenisStart();
+        if (lenisRef.current) {
+          lenisStart();
+        }
+        console.log(lenisRef);
       });
     },
     { scope: container }

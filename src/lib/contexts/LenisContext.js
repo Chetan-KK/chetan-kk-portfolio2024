@@ -13,11 +13,16 @@ export const LenisProvider = ({ children }) => {
     const pathname = usePathname();
     const lenisRef = useRef(null); // Ref to hold lenis instance
 
-
     useEffect(() => {
-        lenisRef.current = new Lenis();
+        // Initialize Lenis
+        if (!lenisRef.current) {
+            lenisRef.current = new Lenis();
+        }
+
         function raf(time) {
-            lenisRef.current.raf(time);
+            if (lenisRef.current) {
+                lenisRef.current.raf(time);
+            }
             requestAnimationFrame(raf);
         }
 
@@ -25,7 +30,9 @@ export const LenisProvider = ({ children }) => {
 
         // Clean up
         return () => {
-            lenisRef.current.stop(); // Stop lenis when component unmounts
+            if (lenisRef.current) {
+                lenisRef.current.stop(); // Stop lenis when component unmounts
+            }
         };
     }, []);
 
@@ -45,9 +52,8 @@ export const LenisProvider = ({ children }) => {
         }
     };
 
-
     const lenisScrollTo = (targetElement) => {
-        if (targetElement) {
+        if (targetElement && lenisRef.current) {
             // lenisRef.current.scrollTo(targetElement);
         }
     };
@@ -55,8 +61,9 @@ export const LenisProvider = ({ children }) => {
     useEffect(() => {
         lenisStop();
     }, []);
+
     return (
-        <LenisContext.Provider value={{ lenisStart, lenisStop, lenisScrollTo }}>
+        <LenisContext.Provider value={{ lenisStart, lenisStop, lenisScrollTo, lenisRef }}>
             {children}
         </LenisContext.Provider>
     );

@@ -5,11 +5,14 @@ import { cn } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef } from "react";
+import { usePreloader } from "@/lib/contexts/PreloaderContext";
 
 gsap.registerPlugin(useGSAP);
 
 const Preloader = () => {
   const container = useRef(null);
+
+  const { setPreloaderShown } = usePreloader();
 
   const loaderDealy = 1;
   const loaderDuration = 4;
@@ -101,6 +104,10 @@ const Preloader = () => {
         },
         "-=.8"
       );
+
+      tl.call(() => {
+        setPreloaderShown(true);
+      });
     },
     { scope: container }
   );
