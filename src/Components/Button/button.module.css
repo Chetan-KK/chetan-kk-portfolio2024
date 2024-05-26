@@ -10,7 +10,9 @@
 }
 
 .button:hover,
-.button:active {
+.button:active,
+.button:focus {
+  outline: none;
   background-color: hsl(var(--primary));
   color: hsl(var(--secondary));
   box-shadow: 0 0 0 10px hsl(var(--dim)), 0 0 0 20px hsl(var(--dark));
@@ -22,7 +24,8 @@
     border-radius: 5px;
   }
   .button:hover,
-  .button:active {
+  .button:active,
+  .button:focus {
     box-shadow: 0 0 0 5px hsl(var(--dim)), 0 0 0 10px hsl(var(--dark));
   }
 }

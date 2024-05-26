@@ -17,8 +17,6 @@ const Cursor = () => {
   const [innerData, setInnerData] = useState<string | null>(null);
 
   useEffect(() => {
-    console.log("size", screenSize);
-
     const moveCursor = (e: MouseEvent) => {
       const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
       if (hoveredElement && hoveredElement.classList.contains("target")) {

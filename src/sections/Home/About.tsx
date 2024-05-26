@@ -10,8 +10,8 @@ const About = () => {
   return (
     <div className="mb-32">
       <SuperHeading heading="About Me" subheading="who am i" />
-      <div className="relative grid grid-cols-2 m-auto w-fit gap-10 mt-32">
-        <div className="w-[30rem] overflow-hidden h-[46rem]">
+      <div className="relative grid md:grid-cols-2 grid-cols-1 m-auto w-fit mt-32">
+        <div className="md:w-[30rem] m-auto p-4 overflow-hidden md:h-[46rem] h-[25rem]">
           <Parallax speed={20}>
             <Image
               src={"/me.jpg"}
@@ -27,23 +27,28 @@ const About = () => {
           scale={[1, 1.5]}
           className={cn(
             bebasNeue.className,
-            "text-center text-dark text-7xl mt-5"
+            "text-center text-dark lg:text-7xl -translate-y-24 md:translate-y-0 text-5xl lg:mt-5 mt-20"
           )}
         >
           16 march
-          <div className="text-[15rem]">2002</div>
+          <div className="lg:text-[15rem] text-9xl">2002</div>
         </Parallax>
-        <div className="absolute bottom-0 leading-10 text-xl text-justify xl:left-[37%] left-[20%] text-white/90 w-[45rem]">
-          <span className="text-6xl">H</span>ello everyone, my name is Chetan
-          and I&apos;m an experienced front-end developer with a specialization
-          in THREE JS development and motion design for the web. With around
-          three years of experience in web development, I have gained extensive
-          knowledge of several programming languages and tools, including
-          JavaScript, React, GSAP, Vite.js, Node.js, Express.js, Tailwind,
-          Chart.js, and version control tools like Git and GitHub. I also
-          possess proficiency in several designing softwares such as Photoshop,
-          Adobe XD, Figma, Blender, Illustrator, Canva, Lightroom, and Spline.
-        </div>
+        <Parallax
+          speed={10}
+          rotate={["0deg", "10deg"]}
+          className="md:absolute bottom-0 lg:leading-10 sm:leading-9 leading-6 lg:text-xl sm:text-lg text-sm text-justify xl:left-[37%] lg:left-[20%] left-[10%] text-white/90 lg:w-[45rem] w-auto p-7"
+        >
+          <span className="lg:text-6xl text-4xl">H</span>ello everyone, my name
+          is Chetan and I&apos;m an experienced front-end developer with a
+          specialization in THREE JS development and motion design for the web.
+          With around three years of experience in web development, I have
+          gained extensive knowledge of several programming languages and tools,
+          including JavaScript, React, GSAP, Vite.js, Node.js, Express.js,
+          Tailwind, Chart.js, and version control tools like Git and GitHub. I
+          also possess proficiency in several designing softwares such as
+          Photoshop, Adobe XD, Figma, Blender, Illustrator, Canva, Lightroom,
+          and Spline.
+        </Parallax>
       </div>
     </div>
   );

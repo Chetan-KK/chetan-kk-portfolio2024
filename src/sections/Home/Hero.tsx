@@ -29,7 +29,6 @@ const Hero2 = () => {
         if (lenisRef.current) {
           lenisStart();
         }
-        console.log(lenisRef);
       });
     },
     { scope: container }

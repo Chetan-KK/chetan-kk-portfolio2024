@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { bebasNeue } from "@/lib/fonts";
 import { Parallax } from "react-scroll-parallax";
 import SmallLoader from "@/Components/SmallLoader";
+import { useScreenSize } from "@/lib/contexts/ScreenSizeContext";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -16,6 +17,8 @@ const Contact = () => {
   const [validEmail, setValidEmail] = useState(false);
   const [isEmailRequired, setIsEmailRequired] = useState(true);
   const [isMessageRequired, setIsMessageRequired] = useState(true);
+
+  const screenSize = useScreenSize();
 
   const formSubmit = async (e: any) => {
     e.preventDefault();
@@ -83,21 +86,21 @@ const Contact = () => {
   return (
     <div>
       <SuperHeading heading="Connect with me" subheading="contact" />
-      <div className="text-dim uppercase w-[60rem] m-auto text-4xl font-bold my-10 leading-10">
+      <div className="text-dim uppercase lg:w-[60rem] w-auto lg:m-auto sm:m-10 m-4 lg:text-4xl md:text-3xl sm:text-2xl text-sm font-bold my-10 md:leading-10 sm:leading-6">
         I&apos;m open for freelance projects, feel free to email me to see how
         can we collaborate.
       </div>
       <form
         onSubmit={formSubmit}
         action=""
-        className="flex w-[60rem] m-auto flex-col gap-6 justify-center items-center"
+        className="flex lg:w-[60rem] lg:m-auto sm:m-5 m-2 flex-col gap-6 justify-center items-center"
       >
         <Parallax
-          translateX={["30px", "-30px"]}
+          translateX={["30px", "-18px"]}
           className="flex flex-col gap-2 w-full"
         >
           <div className="flex justify-between items-center">
-            <label className="text-dim" htmlFor="email">
+            <label className="sm:text-base text-xs text-dim" htmlFor="email">
               Email:
             </label>
             <div
@@ -118,17 +121,17 @@ const Contact = () => {
                   ? "border-green-600 active:border-green-600 focus:border-green-600"
                   : "border-red-600  active:border-red-600 focus:border-red-600"
                 : ""
-            } target w-full px-4 py-2 border-2 rounded-lg active:border-primary focus:border-primary hover:border-primary transition-all duration-300 bg-secondary/10`}
+            } target w-full px-4 py-2 border-2 border-border rounded-lg active:border-primary focus:border-primary hover:border-primary transition-all duration-300 bg-secondary/10 sm:text-base text-sm`}
             placeholder="something@gmail.com"
             required
           />
         </Parallax>
         <Parallax
-          translateX={["-30px", "30px"]}
+          translateX={["-18px", "30px"]}
           className="flex flex-col gap-2 w-full"
         >
           <div className="flex justify-between items-center">
-            <label className="text-dim" htmlFor="message">
+            <label className="sm:text-base text-xs text-dim" htmlFor="message">
               Message:
             </label>
             <div
@@ -141,7 +144,7 @@ const Contact = () => {
           </div>
           <textarea
             onChange={handleMessageCheck}
-            className="target w-full px-4 py-2 border-2  border-border resize-y h-56 rounded-lg focus:border-primary active:border-primary hover:border-primary transition-all duration-300 bg-secondary/10"
+            className="target w-full px-4 py-2 border-2  border-border resize-y h-56 rounded-lg focus:border-primary active:border-primary hover:border-primary transition-all duration-300 bg-secondary/10 sm:text-base text-sm"
             name="message"
             id="message"
           ></textarea>
@@ -170,28 +173,28 @@ const Contact = () => {
             </Button>
           </div>
         )}
-        <div className="my-40 text-center">
-          <div className="uppercase text-4xl text-dim font-bold">
+        <div className="md:my-40 my-20 text-center">
+          <div className="uppercase md:text-4xl sm:text-3xl text-2xl text-dim font-bold">
             let’s build something awesome together
           </div>
 
           <a
             className={cn(
               bebasNeue.className,
-              "target stoked-text target uppercase text-[7rem]"
+              "target stoked-text target uppercase text-[7rem] sm:mt-0 mt-5"
             )}
             target="_blank"
             data-attribute-cursor="link"
             href="mailto:chetankhulage.dev@gmail.com"
           >
-            chetankhulage.dev@gmail.com{" "}
+            {screenSize < 1000 ? "Mail Me" : "chetankhulage.dev@gmail.com"}
             <span
               className="target outer"
               data-attribute-cursor="link"
               aria-hidden="true"
             >
               <span className="target inner" data-attribute-cursor="link">
-                chetankhulage.dev@gmail.com
+                {screenSize < 1000 ? "Mail Me" : "chetankhulage.dev@gmail.com"}
               </span>
             </span>
           </a>
