@@ -55,7 +55,7 @@ const About = () => {
           <div
             ref={parallax.ref}
             style={{
-              lineHeight: `calc(3.2 * var(--progress, 10))`,
+              lineHeight: `calc(3.2 * var(--progress, 10) + 1)`,
               opacity: `var(--progress, 1)`,
             }}
           >

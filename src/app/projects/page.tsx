@@ -10,6 +10,7 @@ import { useLenis } from "@/lib/contexts/LenisContext";
 import cursorClassApplier from "@/lib/cursorClassApplier";
 import { Project } from "@/lib/getData/dataInterfaces";
 import fetchProjects from "@/lib/getData/GetProjects";
+import Contact from "@/sections/Home/Contact";
 import Footer from "@/sections/Home/Footer";
 import React, { useEffect, useState } from "react";
 
@@ -49,6 +50,7 @@ const AllProjects = () => {
           <ProjectSkeleton />
         )}
       </div>
+      <Contact />
       <Footer />
     </MaxWidthWrapper>
   );

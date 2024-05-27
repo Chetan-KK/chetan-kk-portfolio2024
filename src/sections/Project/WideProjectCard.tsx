@@ -1,12 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { FastLeftStep, FastRightStep } from "@/lib/initAnimationSteps";
 import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowForwardRounded";
-import Image from "next/image";
 import { useScreenSize } from "@/lib/contexts/ScreenSizeContext";
 import { Project } from "@/lib/getData/dataInterfaces";
-import { ParallaxBanner } from "react-scroll-parallax";
+import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
 const WideProjectCard = ({
   project,
@@ -18,11 +15,10 @@ const WideProjectCard = ({
   const screenSize = useScreenSize();
 
   return (
-    <motion.div
-      variants={index % 2 == 0 ? FastRightStep : FastLeftStep}
-      initial="hidden"
-      whileInView="show"
-      className="project-box my-10 bg-secondary/30 p-5 flex sm:flex-row flex-col items-center gap-5 sm:rounded-3xl rounded-xl  border-2 hover:border-white border-white/20 sm:hover:shadow-[0_0_0_2px] shadow-[0_0_60px_-10px] shadow-secondary hover:shadow-[0_0_0_1px]"
+    <Parallax
+      translateX={index % 2 == 0 ? ["-30px", "100px"] : ["30px", "-100px"]}
+      easing="easeInQuad"
+      className="project-box my-10 bg-secondary/30 p-5 flex sm:flex-row flex-col items-center gap-5 sm:rounded-3xl rounded-xl border-2 hover:border-white border-white/20 sm:hover:shadow-[0_0_0_2px] shadow-[0_0_60px_-10px] shadow-secondary hover:shadow-[0_0_0_1px]"
     >
       <Link
         href={`/projects/${project.title}`}
@@ -30,7 +26,7 @@ const WideProjectCard = ({
       >
         <ParallaxBanner
           layers={[{ image: project.imgSrc, speed: -10 }]}
-          className="aspect-[10/6] md:h-52 sm:h-32 w-full h-full rounded-xl"
+          className="aspect-[10/6] md:h-52 sm:h-32 shadow-[0_0_3px] shadow-dim w-full h-full rounded-xl"
         />
       </Link>
       <Link
@@ -60,7 +56,7 @@ const WideProjectCard = ({
           )}
         </div>
       </Link>
-    </motion.div>
+    </Parallax>
   );
 };
 

@@ -19,7 +19,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <div className="flex justify-center gap-4 items-center flex-col p-10 bg-secondary/50">
+    <div className="flex justify-center gap-4 items-center flex-col p-10 from-secondary bg-gradient-to-t">
       <Image
         src={"/signName.svg"}
         alt="chetan khulage"

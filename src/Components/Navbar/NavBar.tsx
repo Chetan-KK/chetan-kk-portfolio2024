@@ -6,17 +6,12 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { bebasNeue } from "@/lib/fonts";
 import Available from "../Available";
+import { useScreenSize } from "@/lib/contexts/ScreenSizeContext";
 
 const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
 
-  // function toggleNav() {
-  //   if (menuToggle) {
-  //     setMenuToggle(!menuToggle);
-  //   } else {
-  //     setMenuToggle(true);
-  //   }
-  // }
+  const screenSize = useScreenSize();
 
   const links = [
     {
@@ -43,9 +38,6 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className="absolute top-[50%] translate-y-[-50%] right-[150%]">
-        <Available />
-      </div>
       <div
         onClick={() => {
           setIsActive((prev) => !prev);
@@ -53,6 +45,13 @@ const NavBar = () => {
         className="fixed sm:right-8 right-4 sm:top-4 top-2 z-30"
       >
         <div className={isActive ? "hamburger hamburgerClose" : "hamburger"}>
+          <div className="absolute top-[50%] translate-y-[-50%] right-[130%]">
+            {screenSize < 500 ? (
+              <Available message="Available" />
+            ) : (
+              <Available />
+            )}
+          </div>
           <svg viewBox="0 0 32 32" className="target sm:h-14 h-11 sm:w-14 w-11">
             <path
               className="target line line-top-bottom"

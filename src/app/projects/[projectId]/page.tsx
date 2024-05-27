@@ -12,6 +12,7 @@ import { Project as ProjectInterface } from "@/lib/getData/dataInterfaces";
 import fetchProjects from "@/lib/getData/GetProjects";
 import { getUniqueRandomNumbers } from "@/lib/randomNumbers";
 import { cn } from "@/lib/utils";
+import Contact from "@/sections/Home/Contact";
 import Footer from "@/sections/Home/Footer";
 import WideProjectCard from "@/sections/Project/WideProjectCard";
 import Image from "next/image";
@@ -91,7 +92,7 @@ const Project = () => {
                   "text-center lg:text-[20rem] lg:mb-0 mb-10 text-9xl text-dark"
                 )}
               >
-                {project.year.split("-")[1]}
+                {project.year}
               </Parallax>
               <Parallax
                 speed={-10}
@@ -124,14 +125,7 @@ const Project = () => {
 
             {project.imgs &&
               project.imgs.map((thumbnail: string, _: number) => (
-                <Parallax
-                  // translateX={["-400px", "0px"]}
-                  scale={[0.6, 1.2]}
-                  // rotate={[-180, 0]}
-                  easing="easeInQuad"
-                  // className="m-auto"
-                  key={_}
-                >
+                <Parallax scale={[0.6, 1.2]} easing="easeInQuad" key={_}>
                   <Image
                     src={thumbnail}
                     height={2048}
@@ -165,6 +159,7 @@ const Project = () => {
           </div>
         </div>
       )}
+      <Contact />
       <Footer />
     </MaxWidthWrapper>
   );

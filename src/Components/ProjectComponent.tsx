@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FastLeftStep, FastRightStep } from "@/lib/initAnimationSteps";
 import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowForwardRounded";
-import { Parallax } from "react-scroll-parallax";
-import Image from "next/image";
+import { ParallaxBanner } from "react-scroll-parallax";
 import { useScreenSize } from "@/lib/contexts/ScreenSizeContext";
 
 const ProjectComponent = ({ project, index }: any) => {
@@ -59,37 +58,26 @@ const ProjectComponent = ({ project, index }: any) => {
       <div className="project-grid py-3">
         <Link
           href={`projects/${project.title}`}
-          className="main-project-thumbnail w-full overflow-hidden sm:rounded-2xl rounded-lg"
+          className="main-project-thumbnail w-full h-full sm:rounded-2xl rounded-lg"
         >
-          <Parallax className="h-full w-full" speed={3}>
-            <Image
-              src={project.imgSrc}
-              height={1024}
-              width={1024}
-              data-attribute-cursor="project"
-              className="target h-full w-full sm:rounded-2xl rounded-lg object-cover"
-              alt={project.title}
-            />
-          </Parallax>
+          <ParallaxBanner
+            layers={[{ image: project.imgSrc, speed: -10 }]}
+            data-attribute-cursor="project"
+            className="target shadow-[0_0_3px] shadow-dim w-full h-full sm:rounded-2xl rounded-lg"
+          />
         </Link>
         {project.imgs &&
           project.imgs.slice(0, 2).map((thumbnail: string, _: number) => (
             <Link
               href={`projects/${project.title}`}
-              className="h-full w-full overflow-hidden sm:rounded-2xl rounded-lg"
+              className="h-full w-full sm:rounded-2xl rounded-lg"
               key={_}
             >
-              <Parallax className="h-full w-full" speed={4}>
-                <Image
-                  key={_}
-                  src={thumbnail}
-                  height={1024}
-                  data-attribute-cursor="project"
-                  width={1024}
-                  className="target object-cover w-full h-full sm:rounded-2xl rounded-lg"
-                  alt={project.title}
-                />
-              </Parallax>
+              <ParallaxBanner
+                layers={[{ image: thumbnail, speed: 10 }]}
+                data-attribute-cursor="project"
+                className="target w-full h-full shadow-[0_0_3px] shadow-dim sm:rounded-2xl rounded-lg"
+              />
             </Link>
           ))}
       </div>
