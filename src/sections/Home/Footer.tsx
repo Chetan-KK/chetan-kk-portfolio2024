@@ -25,6 +25,7 @@ const Footer = () => {
         alt="chetan khulage"
         className="sm:my-10 mb-5 h-auto w-auto"
         height={200}
+        priority
         width={750}
       />
       <h1 className="font-bold text-dim uppercase sm:text-3xl text-xl">

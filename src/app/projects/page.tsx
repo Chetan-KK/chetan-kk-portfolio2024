@@ -38,17 +38,17 @@ const AllProjects = () => {
   }, [lenisRef.current]);
 
   return (
-    <MaxWidthWrapper>
-      <Logo />
-      <NavBar />
+    <MaxWidthWrapper className="mt-14">
       <SuperHeading heading="All Projects" subheading="All Projects" />
-      {allProjects ? (
-        allProjects.map((project, i) => (
-          <ProjectComponent key={i} project={project} index={i} />
-        ))
-      ) : (
-        <ProjectSkeleton />
-      )}
+      <div className="lg:px-20 sm:px-10 px-2">
+        {allProjects ? (
+          allProjects.map((project, i) => (
+            <ProjectComponent key={i} project={project} index={i} />
+          ))
+        ) : (
+          <ProjectSkeleton />
+        )}
+      </div>
       <Footer />
     </MaxWidthWrapper>
   );

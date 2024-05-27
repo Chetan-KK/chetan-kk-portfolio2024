@@ -11,17 +11,18 @@ const About = () => {
     <div className="mb-32">
       <SuperHeading heading="About Me" subheading="who am i" />
       <div className="relative grid md:grid-cols-2 grid-cols-1 m-auto w-fit mt-32">
-        <div className="md:w-[30rem] m-auto p-4 overflow-hidden md:h-[46rem] h-[25rem]">
-          <Parallax speed={20}>
-            <Image
-              src={"/me.jpg"}
-              alt="chetan khulage"
-              height={512}
-              width={512}
-              className="object-cover saturate-0"
-            />
-          </Parallax>
-        </div>
+        <Parallax
+          speed={20}
+          className="md:w-[30rem] m-auto p-4 md:h-[46rem] h-[25rem]"
+        >
+          <Image
+            src={"/me.jpg"}
+            alt="chetan khulage"
+            height={512}
+            width={512}
+            className="object-cover saturate-0 shadow-[0_0_60px_-10px] shadow-secondary"
+          />
+        </Parallax>
         <Parallax
           speed={20}
           scale={[1, 1.5]}

@@ -30,7 +30,7 @@ const Projects = () => {
       <SuperHeading heading="Some Of my projects" subheading="showcase" />
 
       {/* project */}
-      <div className="lg:px-20 sm:px-10 px-2" id="scrollDown">
+      <div className="lg:px-20 sm:px-10 px-2">
         {allProjects ? (
           allProjects
             .slice(0, 2)

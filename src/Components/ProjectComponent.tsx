@@ -15,12 +15,12 @@ const ProjectComponent = ({ project, index }: any) => {
       variants={index % 2 == 0 ? FastRightStep : FastLeftStep}
       initial="hidden"
       whileInView="show"
-      className="project-box my-10 bg-secondary/30 p-5 sm:rounded-3xl rounded-xl  border-2 hover:border-white border-white/20 sm:hover:shadow-[0_0_0_2px] hover:shadow-[0_0_0_1px] shadow-white/10"
+      className="project-box my-10 bg-secondary/30 p-5 sm:rounded-3xl rounded-xl  border-2 hover:border-white border-white/20 sm:hover:shadow-[0_0_0_2px] shadow-[0_0_60px_-10px] shadow-secondary hover:shadow-[0_0_0_1px]"
     >
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <Link
-            href={`/project/${project.title}`}
+            href={`/projects/${project.title}`}
             className="target uppercase sm:text-4xl text-xl font-bold"
             data-attribute-cursor="project"
           >
@@ -58,7 +58,7 @@ const ProjectComponent = ({ project, index }: any) => {
       </div>
       <div className="project-grid py-3">
         <Link
-          href={`project/${project.title}`}
+          href={`projects/${project.title}`}
           className="main-project-thumbnail w-full overflow-hidden sm:rounded-2xl rounded-lg"
         >
           <Parallax className="h-full w-full" speed={3}>
@@ -75,7 +75,7 @@ const ProjectComponent = ({ project, index }: any) => {
         {project.imgs &&
           project.imgs.slice(0, 2).map((thumbnail: string, _: number) => (
             <Link
-              href={`project/${project.title}`}
+              href={`projects/${project.title}`}
               className="h-full w-full overflow-hidden sm:rounded-2xl rounded-lg"
               key={_}
             >

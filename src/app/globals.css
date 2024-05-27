@@ -208,8 +208,11 @@ textarea:focus {
 
 @media screen and (max-width: 640px) {
   .loader {
-    top: calc(50% - 2.1rem);
+    top: 50%;
     height: 3px;
+  }
+  .count-slide {
+    top: calc(50% - 2.1rem);
   }
 }
 

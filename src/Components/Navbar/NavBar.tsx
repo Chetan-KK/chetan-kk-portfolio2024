@@ -25,7 +25,7 @@ const NavBar = () => {
     },
     {
       name: "Projects",
-      url: "/",
+      url: "/projects",
     },
     {
       name: "About",

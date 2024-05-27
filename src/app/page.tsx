@@ -18,8 +18,6 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <MaxWidthWrapper>
-        <Logo />
-        <NavBar />
         <Parallax
           speed={-40}
           rotateX={["0deg", "360deg"]}

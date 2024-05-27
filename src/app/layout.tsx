@@ -5,6 +5,8 @@ import Cursor from "@/Components/cursor/Cursor";
 import { cn } from "@/lib/utils";
 import Providers from "./providers";
 import Preloader from "@/Components/Preloader";
+import Logo from "@/Components/Logo";
+import NavBar from "@/Components/Navbar/NavBar";
 
 export const metadata: Metadata = {
   title: "Chetan-KK-portfolio-2024",
@@ -20,6 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("antialiased", poppins.className)}>
         <Providers>
+          <Logo />
+          <NavBar />
           <Cursor />
           {/* <div className="fixed top-0 left-0 overflow-hidden -z-50"> */}
           {/* <BackgroundGradientAnimation
