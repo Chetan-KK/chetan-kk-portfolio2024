@@ -68,18 +68,18 @@ const Project = () => {
   return (
     <MaxWidthWrapper>
       {project && (
-        <div className="pt-24 px-10">
+        <div className="pt-24 sm:px-10 px-4">
           <Parallax
             translateX={[-10, 2]}
-            className="uppercase font-bold text-7xl text-primary"
+            className="uppercase font-bold md:text-7xl sm:text-5xl text-3xl text-primary"
           >
             {project.title}
           </Parallax>
-          <div className="text-dim text-xl mt-3">
+          <div className="text-dim md:text-xl text-sm mt-3">
             {project.stack.join(", ")}.
           </div>
-          <div className="flex justify-between items-center content-center">
-            <div className="leading-[3rem] w-[40vw] text-dim first-letter:text-6xl first-letter:text-primary text-xl my-10">
+          <div className="sm:flex justify-between items-center content-center">
+            <div className="md:leading-[3rem] sm:leading-9 leading-7 lg:max-w-[40vw] w-full text-dim md:first-letter:text-6xl sm:first-letter:text-4xl first-letter:text-3xl first-letter:text-primary md:text-xl sm:text-lg text-sm my-10">
               {project.desc}
             </div>
             <div className="">
@@ -88,7 +88,7 @@ const Project = () => {
                 translateX={[10, -10]}
                 className={cn(
                   bebasNeue.className,
-                  "text-center text-[20rem] text-dark"
+                  "text-center lg:text-[20rem] lg:mb-0 mb-10 text-9xl text-dark"
                 )}
               >
                 {project.year.split("-")[1]}
@@ -116,7 +116,7 @@ const Project = () => {
               translateX={[10, -10]}
               className={cn(
                 bebasNeue.className,
-                "text-center text-[10rem] text-dark"
+                "text-center md:text-[10rem] sm:text-8xl text-6xl sm:my-0 my-10 text-dark"
               )}
             >
               ScreenShots
@@ -150,7 +150,7 @@ const Project = () => {
               translateX={[-10, 10]}
               className={cn(
                 bebasNeue.className,
-                "text-center text-[10rem] text-dark"
+                "text-center md:text-[10rem] sm:text-8xl text-6xl sm:my-0 my-10 text-dark"
               )}
             >
               Other Projects

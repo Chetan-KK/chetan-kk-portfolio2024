@@ -48,7 +48,7 @@ const NavBar = () => {
       </div>
       <div
         onClick={() => {
-          setIsActive(!isActive);
+          setIsActive((prev) => !prev);
         }}
         className="fixed sm:right-8 right-4 sm:top-4 top-2 z-30"
       >
@@ -71,7 +71,14 @@ const NavBar = () => {
         <AnimatePresence>
           {isActive &&
             links.map((link, i) => (
-              <Link key={i} href={link.url} className="target">
+              <Link
+                key={i}
+                onClick={() => {
+                  setIsActive((prev) => !prev);
+                }}
+                href={link.url}
+                className="target"
+              >
                 <motion.div
                   custom={i}
                   variants={perspective}

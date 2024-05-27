@@ -4,9 +4,21 @@ import { bebasNeue } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
-import { Parallax } from "react-scroll-parallax";
+import { Parallax, useParallax } from "react-scroll-parallax";
 
 const About = () => {
+  const parallax = useParallax<HTMLDivElement>({
+    onProgressChange: (progress) => {
+      if (parallax.ref.current) {
+        // set progress to CSS variable
+        parallax.ref.current.style.setProperty(
+          "--progress",
+          progress.toString()
+        );
+      }
+    },
+  });
+
   return (
     <div className="mb-32">
       <SuperHeading heading="About Me" subheading="who am i" />
@@ -36,19 +48,28 @@ const About = () => {
         </Parallax>
         <Parallax
           speed={10}
-          rotate={["0deg", "10deg"]}
+          scale={[0.7, 1.3]}
+          rotate={["0deg", "5deg"]}
           className="md:absolute bottom-0 lg:leading-10 sm:leading-9 leading-6 lg:text-xl sm:text-lg text-sm text-justify xl:left-[37%] lg:left-[20%] left-[10%] text-white/90 lg:w-[45rem] w-auto p-7"
         >
-          <span className="lg:text-6xl text-4xl">H</span>ello everyone, my name
-          is Chetan and I&apos;m an experienced front-end developer with a
-          specialization in THREE JS development and motion design for the web.
-          With around three years of experience in web development, I have
-          gained extensive knowledge of several programming languages and tools,
-          including JavaScript, React, GSAP, Vite.js, Node.js, Express.js,
-          Tailwind, Chart.js, and version control tools like Git and GitHub. I
-          also possess proficiency in several designing softwares such as
-          Photoshop, Adobe XD, Figma, Blender, Illustrator, Canva, Lightroom,
-          and Spline.
+          <div
+            ref={parallax.ref}
+            style={{
+              lineHeight: `calc(3.2 * var(--progress, 10))`,
+              opacity: `var(--progress, 1)`,
+            }}
+          >
+            <span className="lg:text-6xl text-4xl">H</span>ello everyone, my
+            name is Chetan and I&apos;m an experienced front-end developer with
+            a specialization in THREE JS development and motion design for the
+            web. With around three years of experience in web development, I
+            have gained extensive knowledge of several programming languages and
+            tools, including JavaScript, React, GSAP, Vite.js, Node.js,
+            Express.js, Tailwind, Chart.js, and version control tools like Git
+            and GitHub. I also possess proficiency in several designing
+            softwares such as Photoshop, Adobe XD, Figma, Blender, Illustrator,
+            Canva, Lightroom, and Spline.
+          </div>
         </Parallax>
       </div>
     </div>

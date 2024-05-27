@@ -86,7 +86,7 @@ const Contact = () => {
   return (
     <div>
       <SuperHeading heading="Connect with me" subheading="contact" />
-      <div className="text-dim uppercase lg:w-[60rem] w-auto lg:m-auto sm:m-10 m-4 lg:text-4xl md:text-3xl sm:text-2xl text-sm font-bold my-10 md:leading-10 sm:leading-6">
+      <div className="text-dim uppercase lg:w-[60rem] w-auto lg:m-auto lg:mb-7 lg:mt-5 sm:m-10 m-4 lg:text-4xl md:text-3xl sm:text-2xl text-sm font-bold my-10 md:leading-10 sm:leading-6">
         I&apos;m open for freelance projects, feel free to email me to see how
         can we collaborate.
       </div>
