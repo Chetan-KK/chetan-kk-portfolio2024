@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Providers from "./providers";
 import Logo from "@/Components/Logo";
 import NavBar from "@/Components/Navbar/NavBar";
+import Preloader from "@/Components/Preloader";
 
 export const metadata: Metadata = {
   title: "Chetan-KK-portfolio-2024",
@@ -36,7 +37,7 @@ export default function RootLayout({
             pointerColor="130, 65, 70"
           /> */}
           {/* </div> */}
-          {/* <Preloader /> */}
+          <Preloader />
           {children}
         </Providers>
       </body>

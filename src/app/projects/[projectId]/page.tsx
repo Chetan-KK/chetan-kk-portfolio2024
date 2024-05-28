@@ -13,6 +13,7 @@ import Contact from "@/sections/Home/Contact";
 import Footer from "@/sections/Home/Footer";
 import WideProjectCard from "@/sections/Project/WideProjectCard";
 import Image from "next/image";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { Parallax } from "react-scroll-parallax";
@@ -172,12 +173,14 @@ const Project = () => {
               className=" min-h-screen flex items-center justify-center text-center flex-col gap-2"
             >
               <div className="uppercase font-bold md:text-7xl sm:text-5xl text-3xl text-primary">
-                Something Went Wrong!!
+                Project is not Available!!
               </div>
               <div className="text-xl text-dim">
-                check your network connection or try again
+                check out some of the other projects
               </div>
-              <Button className="py-3 px-7 mt-5">Try again</Button>
+              <Link href={"/projects"}>
+                <Button className="py-3 px-7 mt-5">See other projects</Button>
+              </Link>
             </Parallax>
           ) : (
             <SingleProjectSkeleton />
