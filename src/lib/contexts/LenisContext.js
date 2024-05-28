@@ -10,61 +10,66 @@ const LenisContext = createContext();
 export const useLenis = () => useContext(LenisContext);
 
 export const LenisProvider = ({ children }) => {
-    const pathname = usePathname();
-    const lenisRef = useRef(null); // Ref to hold lenis instance
+  const pathname = usePathname();
+  const lenisRef = useRef(null); // Ref to hold lenis instance
 
-    useEffect(() => {
-        // Initialize Lenis
-        if (!lenisRef.current) {
-            lenisRef.current = new Lenis();
-        }
+  useEffect(() => {
+    // Initialize Lenis
+    if (!lenisRef.current) {
+      lenisRef.current = new Lenis();
+    }
 
-        function raf(time) {
-            if (lenisRef.current) {
-                lenisRef.current.raf(time);
-            }
-            requestAnimationFrame(raf);
-        }
+    function raf(time) {
+      if (lenisRef.current) {
+        lenisRef.current.raf(time);
+      }
+      requestAnimationFrame(raf);
+    }
 
-        requestAnimationFrame(raf);
+    requestAnimationFrame(raf);
 
-        // Clean up
-        return () => {
-            if (lenisRef.current) {
-                lenisRef.current.stop(); // Stop lenis when component unmounts
-            }
-        };
-    }, []);
-
-    useEffect(() => {
-        lenisStart();
-    }, [pathname]);
-
-    const lenisStart = () => {
-        if (lenisRef.current) {
-            lenisRef.current.start();
-        }
+    // Clean up
+    return () => {
+      if (lenisRef.current) {
+        lenisRef.current.stop(); // Stop lenis when component unmounts
+      }
     };
+  }, []);
 
-    const lenisStop = () => {
-        if (lenisRef.current) {
-            lenisRef.current.stop();
-        }
-    };
+  useEffect(() => {
+    lenisStart();
+  }, [pathname]);
 
-    const lenisScrollTo = (targetElement) => {
-        if (targetElement && lenisRef.current) {
-            // lenisRef.current.scrollTo(targetElement);
-        }
-    };
+  const lenisStart = () => {
+    if (lenisRef.current) {
+      lenisRef.current.start();
+    }
+  };
 
-    useEffect(() => {
-        lenisStop();
-    }, []);
+  const lenisStop = () => {
+    if (lenisRef.current) {
+      lenisRef.current.stop();
+    }
+  };
 
-    return (
-        <LenisContext.Provider value={{ lenisStart, lenisStop, lenisScrollTo, lenisRef }}>
-            {children}
-        </LenisContext.Provider>
-    );
+  const lenisScrollTo = (targetElement) => {
+    if (targetElement && lenisRef.current) {
+      lenisRef.current.scrollTo(targetElement, {
+        offset: 0, // Offset to apply to the scroll position
+        duration: 1.5, // Smooth scrolling duration in seconds
+        easing: (t) => t, // Linear easing function, you can change it to any easing function you prefer
+        immediate: false, // If true, immediately jump to the target position without animation
+      });
+    }
+  };
+
+  // useEffect(() => {
+  //     lenisStop();
+  // }, []);
+
+  return (
+    <LenisContext.Provider value={{ lenisStart, lenisStop, lenisScrollTo, lenisRef }}>
+      {children}
+    </LenisContext.Provider>
+  );
 };

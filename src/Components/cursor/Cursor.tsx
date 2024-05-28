@@ -18,24 +18,31 @@ const Cursor = () => {
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
-      const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
-      if (hoveredElement && hoveredElement.classList.contains("target")) {
-        setHovered(true);
-        //upate
+      let hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
+      let foundTarget = false;
 
-        const dataAttribute = hoveredElement.getAttribute(
-          "data-attribute-cursor"
-        );
+      while (hoveredElement && !foundTarget) {
+        if (hoveredElement.classList.contains("target")) {
+          foundTarget = true;
+          setHovered(true);
 
-        if (dataAttribute) {
-          setInnerData(dataAttribute);
+          const dataAttribute = hoveredElement.getAttribute(
+            "data-attribute-cursor"
+          );
+          if (dataAttribute) {
+            setInnerData(dataAttribute);
+          } else {
+            setInnerData(null);
+          }
+
+          normalCursorX.set(e.clientX - 32);
+          normalCursorY.set(e.clientY - 32);
         } else {
-          setInnerData(null);
+          hoveredElement = hoveredElement.parentElement;
         }
+      }
 
-        normalCursorX.set(e.clientX - 32);
-        normalCursorY.set(e.clientY - 32);
-      } else {
+      if (!foundTarget) {
         setHovered(false);
         normalCursorX.set(e.clientX - 13);
         normalCursorY.set(e.clientY - 13);

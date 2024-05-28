@@ -151,17 +151,11 @@ const Contact = () => {
         </Parallax>
 
         {err ? (
-          <div
-            className="heading"
-            style={{ fontSize: "1.3rem", marginTop: "1rem" }}
-          >
+          <div style={{ fontSize: "1.3rem", marginTop: "1rem" }}>
             <b>Something is wrong, try again!</b>
           </div>
         ) : send ? (
-          <div
-            className="heading"
-            style={{ fontSize: "1.3rem", marginTop: "1rem" }}
-          >
+          <div className="" style={{ fontSize: "1.3rem", marginTop: "1rem" }}>
             <b>Sent successful !!</b>
           </div>
         ) : loading ? (
@@ -175,25 +169,21 @@ const Contact = () => {
         )}
         <div className="md:my-40 my-20 text-center">
           <div className="uppercase md:text-4xl sm:text-3xl text-2xl text-dim font-bold">
-            let’s build something awesome together
+            let's build something awesome together
           </div>
 
           <a
             className={cn(
               bebasNeue.className,
-              "target stoked-text target uppercase text-[7rem] sm:mt-0 mt-5"
+              "target stoked-text uppercase text-[7rem] sm:mt-0 mt-5"
             )}
             target="_blank"
             data-attribute-cursor="link"
             href="mailto:chetankhulage.dev@gmail.com"
           >
             {screenSize < 1000 ? "Mail Me" : "chetankhulage.dev@gmail.com"}
-            <span
-              className="target outer"
-              data-attribute-cursor="link"
-              aria-hidden="true"
-            >
-              <span className="target inner" data-attribute-cursor="link">
+            <span className="outer" aria-hidden="true">
+              <span className="inner">
                 {screenSize < 1000 ? "Mail Me" : "chetankhulage.dev@gmail.com"}
               </span>
             </span>

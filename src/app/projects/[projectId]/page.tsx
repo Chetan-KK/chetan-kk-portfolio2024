@@ -1,12 +1,9 @@
 "use client";
 
-import Logo from "@/Components/Logo";
+import Button from "@/Components/Button/Button";
 import MaxWidthWrapper from "@/Components/MaxWidthWrapper";
-import NavBar from "@/Components/Navbar/NavBar";
-import ParallaxImage from "@/Components/ParallaxImage";
-import ProjectComponent from "@/Components/ProjectComponent";
 import ProjectSkeleton from "@/Components/skeletons/ProjectSkeleton";
-import { useLenis } from "@/lib/contexts/LenisContext";
+import SingleProjectSkeleton from "@/Components/skeletons/SingleProjectSkeleton";
 import { bebasNeue } from "@/lib/fonts";
 import { Project as ProjectInterface } from "@/lib/getData/dataInterfaces";
 import fetchProjects from "@/lib/getData/GetProjects";
@@ -23,52 +20,58 @@ import { Parallax } from "react-scroll-parallax";
 const Project = () => {
   const params: { projectId: string } = useParams();
 
-  const { lenisStart, lenisRef } = useLenis();
-
   const CurrentProjectName = params.projectId.replaceAll("%20", " ");
 
   const [project, setProject] = useState<ProjectInterface | null>(null);
+  const [projectFound, setProjectFound] = useState<boolean>(true);
   const [randomProjectSet, setRandomProjectSet] = useState<
     ProjectInterface[] | null
   >(null);
-  // const [activeImg, setActiveImg] = useState(null);
 
   const getProjects = async () => {
     const allProjects = await fetchProjects();
 
-    const CurrentProject = allProjects.filter(
-      (project: any) => project.title === CurrentProjectName
-    );
+    if (allProjects) {
+      const CurrentProject = allProjects.filter(
+        (project: any) => project.title === CurrentProjectName
+      );
 
-    const [firstRandom, secondRandom, thirdRandom] = getUniqueRandomNumbers(
-      3,
-      allProjects.length
-    );
+      const [firstRandom, secondRandom, thirdRandom] = getUniqueRandomNumbers(
+        3,
+        allProjects.length
+      );
 
-    const randomArr = [
-      allProjects[firstRandom],
-      allProjects[secondRandom],
-      allProjects[thirdRandom],
-    ];
+      const randomArr = [
+        allProjects[firstRandom],
+        allProjects[secondRandom],
+        allProjects[thirdRandom],
+      ];
 
-    setRandomProjectSet(randomArr);
+      setRandomProjectSet(randomArr);
 
-    setProject(CurrentProject[0]);
+      if (!CurrentProject[0]) {
+        setProjectFound(false);
+        console.log("ntott");
+      } else {
+        setProject(CurrentProject[0]);
+      }
+    } else {
+    }
   };
 
   useEffect(() => {
     getProjects();
   }, []);
 
-  useEffect(() => {
-    if (lenisRef.current) {
-      lenisStart();
-    }
-  }, [lenisRef.current]);
+  // useEffect(() => {
+  //   if (lenisRef.current) {
+  //     lenisStart();
+  //   }
+  // }, [lenisRef.current]);
 
   return (
     <MaxWidthWrapper>
-      {project && (
+      {project ? (
         <div className="pt-24 sm:px-10 px-4">
           <Parallax
             translateX={[-10, 2]}
@@ -158,6 +161,28 @@ const Project = () => {
             )}
           </div>
         </div>
+      ) : (
+        // this component will be if there is network error
+        // this should be replaced with loader
+
+        <>
+          {!projectFound ? (
+            <Parallax
+              scale={[0.6, 1]}
+              className=" min-h-screen flex items-center justify-center text-center flex-col gap-2"
+            >
+              <div className="uppercase font-bold md:text-7xl sm:text-5xl text-3xl text-primary">
+                Something Went Wrong!!
+              </div>
+              <div className="text-xl text-dim">
+                check your network connection or try again
+              </div>
+              <Button className="py-3 px-7 mt-5">Try again</Button>
+            </Parallax>
+          ) : (
+            <SingleProjectSkeleton />
+          )}
+        </>
       )}
       <Contact />
       <Footer />

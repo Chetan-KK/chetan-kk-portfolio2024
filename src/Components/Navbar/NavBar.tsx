@@ -24,20 +24,23 @@ const NavBar = () => {
     },
     {
       name: "About",
-      url: "/",
+      url: "/about",
     },
     {
       name: "Resume",
-      url: "/",
+      url: "/resume",
     },
     {
       name: "Have an Idea?",
-      url: "/",
+      url: "/contact",
     },
   ];
 
   return (
     <div>
+      <div className="fixed z-40 sm:top-7 top-3.5 sm:right-24 right-16">
+        {screenSize < 500 ? <Available message="Available" /> : <Available />}
+      </div>
       <div
         onClick={() => {
           setIsActive((prev) => !prev);
@@ -45,19 +48,12 @@ const NavBar = () => {
         className="fixed sm:right-8 right-4 sm:top-4 top-2 z-30"
       >
         <div className={isActive ? "hamburger hamburgerClose" : "hamburger"}>
-          <div className="absolute top-[50%] translate-y-[-50%] right-[130%]">
-            {screenSize < 500 ? (
-              <Available message="Available" />
-            ) : (
-              <Available />
-            )}
-          </div>
           <svg viewBox="0 0 32 32" className="target sm:h-14 h-11 sm:w-14 w-11">
             <path
-              className="target line line-top-bottom"
+              className="line line-top-bottom"
               d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
             ></path>
-            <path className="target line" d="M7 16 27 16"></path>
+            <path className="line" d="M7 16 27 16"></path>
           </svg>
         </div>
       </div>
@@ -84,7 +80,7 @@ const NavBar = () => {
                   initial="initial"
                   animate="enter"
                   exit="exit"
-                  className="target hover-up sm:p-3 p-2 sm:pl-10 pl-5 text-dim uppercase font-bold sm:text-7xl text-2xl"
+                  className="hover-up sm:p-3 p-2 sm:pl-10 pl-5 text-dim uppercase font-bold sm:text-7xl text-2xl"
                 >
                   {link.name}
                 </motion.div>

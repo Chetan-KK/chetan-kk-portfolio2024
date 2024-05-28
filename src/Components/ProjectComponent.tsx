@@ -31,16 +31,8 @@ const ProjectComponent = ({ project, index }: any) => {
             target="_blank"
             className="target flex items-center"
           >
-            <span
-              data-attribute-cursor="link"
-              className="target sm:block hidden"
-            >
-              Preview
-            </span>
-            <MaterialSymbolsArrowForwardRounded
-              data-attribute-cursor="link"
-              className="target sm:text-4xl text-2xl -rotate-45"
-            />
+            <span className="sm:block hidden">Preview</span>
+            <MaterialSymbolsArrowForwardRounded className="sm:text-4xl text-2xl -rotate-45" />
           </a>
         </div>
         <div className="flex justify-between sm:text-base text-xs text-dim items-center">
@@ -58,25 +50,25 @@ const ProjectComponent = ({ project, index }: any) => {
       <div className="project-grid py-3">
         <Link
           href={`projects/${project.title}`}
-          className="main-project-thumbnail w-full h-full sm:rounded-2xl rounded-lg"
+          data-attribute-cursor="project"
+          className="target main-project-thumbnail w-full h-full sm:rounded-2xl rounded-lg"
         >
           <ParallaxBanner
             layers={[{ image: project.imgSrc, speed: -10 }]}
-            data-attribute-cursor="project"
-            className="target shadow-[0_0_3px] shadow-dim w-full h-full sm:rounded-2xl rounded-lg"
+            className="shadow-[0_0_3px] shadow-dim w-full h-full sm:rounded-2xl rounded-lg"
           />
         </Link>
         {project.imgs &&
           project.imgs.slice(0, 2).map((thumbnail: string, _: number) => (
             <Link
               href={`projects/${project.title}`}
-              className="h-full w-full sm:rounded-2xl rounded-lg"
+              className="target h-full w-full sm:rounded-2xl rounded-lg"
+              data-attribute-cursor="project"
               key={_}
             >
               <ParallaxBanner
                 layers={[{ image: thumbnail, speed: 10 }]}
-                data-attribute-cursor="project"
-                className="target w-full h-full shadow-[0_0_3px] shadow-dim sm:rounded-2xl rounded-lg"
+                className="w-full h-full shadow-[0_0_3px] shadow-dim sm:rounded-2xl rounded-lg"
               />
             </Link>
           ))}

@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="flex gap-5">
           <a href={infoData.links.github} className="target">
             <Image
-              className="target sm:h-14 h-10 w-10 sm:w-14"
+              className="sm:h-14 h-10 w-10 sm:w-14"
               src={"/icons/Github.svg"}
               height={70}
               width={70}
@@ -44,7 +44,7 @@ const Footer = () => {
           </a>
           <a href={infoData.links.linkedin} className="target">
             <Image
-              className="target sm:h-14 h-10 w-10 sm:w-14"
+              className="sm:h-14 h-10 w-10 sm:w-14"
               src={"/icons/Linkedin.svg"}
               height={70}
               width={70}
@@ -53,7 +53,7 @@ const Footer = () => {
           </a>
           <a href={infoData.links.instagram} className="target">
             <Image
-              className="target sm:h-14 h-10 w-10 sm:w-14"
+              className="sm:h-14 h-10 w-10 sm:w-14"
               src={"/icons/Instagram.svg"}
               height={70}
               width={70}
@@ -62,7 +62,7 @@ const Footer = () => {
           </a>
           <a href={infoData.links.linkedin} className="target">
             <Image
-              className="target sm:h-14 h-10 w-10 sm:w-14"
+              className="sm:h-14 h-10 w-10 sm:w-14"
               src={"/icons/Leetcode.svg"}
               height={70}
               width={70}

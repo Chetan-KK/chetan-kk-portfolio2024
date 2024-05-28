@@ -4,7 +4,6 @@ import { poppins } from "@/lib/fonts";
 import Cursor from "@/Components/cursor/Cursor";
 import { cn } from "@/lib/utils";
 import Providers from "./providers";
-import Preloader from "@/Components/Preloader";
 import Logo from "@/Components/Logo";
 import NavBar from "@/Components/Navbar/NavBar";
 
@@ -37,7 +36,7 @@ export default function RootLayout({
             pointerColor="130, 65, 70"
           /> */}
           {/* </div> */}
-          <Preloader />
+          {/* <Preloader /> */}
           {children}
         </Providers>
       </body>

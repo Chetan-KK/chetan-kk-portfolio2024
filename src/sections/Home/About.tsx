@@ -59,16 +59,13 @@ const About = () => {
               opacity: `var(--progress, 1)`,
             }}
           >
-            <span className="lg:text-6xl text-4xl">H</span>ello everyone, my
-            name is Chetan and I&apos;m an experienced front-end developer with
-            a specialization in THREE JS development and motion design for the
-            web. With around three years of experience in web development, I
-            have gained extensive knowledge of several programming languages and
-            tools, including JavaScript, React, GSAP, Vite.js, Node.js,
-            Express.js, Tailwind, Chart.js, and version control tools like Git
-            and GitHub. I also possess proficiency in several designing
-            softwares such as Photoshop, Adobe XD, Figma, Blender, Illustrator,
-            Canva, Lightroom, and Spline.
+            <span className="lg:text-6xl text-4xl">H</span>ello, I'm Chetan, a
+            front-end developer with a passion for creating stunning,
+            interactive web experiences. With over three years of expertise in
+            JavaScript, React, and THREE.js, I blend creativity with technical
+            prowess to bring your ideas to life. Whether designing sleek
+            interfaces or crafting dynamic animations, I am dedicated to
+            delivering top-notch, user-centric solutions.
           </div>
         </Parallax>
       </div>
