@@ -169,7 +169,7 @@ const Contact = () => {
         )}
         <div className="md:my-40 my-20 text-center">
           <div className="uppercase md:text-4xl sm:text-3xl text-2xl text-dim font-bold">
-            let's build something awesome together
+            let&apos;s build something awesome together
           </div>
 
           <a

@@ -59,8 +59,8 @@ const About = () => {
               opacity: `var(--progress, 1)`,
             }}
           >
-            <span className="lg:text-6xl text-4xl">H</span>ello, I'm Chetan, a
-            front-end developer with a passion for creating stunning,
+            <span className="lg:text-6xl text-4xl">H</span>ello, I&apos;m
+            Chetan, a front-end developer with a passion for creating stunning,
             interactive web experiences. With over three years of expertise in
             JavaScript, React, and THREE.js, I blend creativity with technical
             prowess to bring your ideas to life. Whether designing sleek

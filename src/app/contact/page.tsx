@@ -89,14 +89,15 @@ const ContactForm = () => {
   return (
     <MaxWidthWrapper className="mt-20">
       <div className="lg:w-[60rem] w-auto lg:m-auto lg:mb-7 lg:mt-5 sm:m-10 m-4 uppercase font-bold md:text-6xl sm:text-4xl text-2xl text-primary">
-        <Parallax translateX={[-10, 2]}>let's build something</Parallax>
+        <Parallax translateX={[-10, 2]}>let&apos;s build something</Parallax>
         <Parallax translateX={[10, -2]}>awesome together</Parallax>
       </div>
 
       <div className="text-dim lg:w-[60rem] w-auto lg:m-auto lg:mb-7 lg:mt-5 sm:m-10 m-4 lg:text-xl md:text-lg sm:text-sm text-xs font-bold my-10 md:leading-10 sm:leading-6">
         Whether you have a groundbreaking idea, a small tweak, or a grand
-        vision, I'm here to help bring it to life. Fill out the form below to
-        share your thoughts, and let's start this exciting journey together!
+        vision, I&apos;m here to help bring it to life. Fill out the form below
+        to share your thoughts, and let&apos;s start this exciting journey
+        together!
       </div>
       <form
         onSubmit={formSubmit}
@@ -417,7 +418,7 @@ const ContactForm = () => {
         ) : (
           <div>
             <Button type="submit" className="py-3 px-8">
-              Let's build
+              Let&apos;s build
             </Button>
           </div>
         )}
