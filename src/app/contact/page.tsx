@@ -106,11 +106,14 @@ const ContactForm = () => {
         <div className="flex items-center sm:flex-row flex-col justify-center w-full gap-6">
           <div className="flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
-              <label className="sm:text-base text-xs text-dim" htmlFor="name">
+              <label
+                className="sm:text-base text-xs text-primary"
+                htmlFor="name"
+              >
                 Name:
               </label>
               <div
-                className={`scale-100 origin-bottom-right text-xs transition-all`}
+                className={`scale-100 origin-bottom-right text-xs transition-all text-dim`}
               >
                 <span className="text-red-500">*</span> required
               </div>
@@ -129,11 +132,14 @@ const ContactForm = () => {
 
           <div className="flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
-              <label className="sm:text-base text-xs text-dim" htmlFor="email">
+              <label
+                className="sm:text-base text-xs text-primary"
+                htmlFor="email"
+              >
                 Email:
               </label>
               <div
-                className={`scale-100 origin-bottom-right text-xs transition-all`}
+                className={`scale-100 origin-bottom-right text-xs transition-all text-dim`}
               >
                 <span className="text-red-500">*</span> required
               </div>
@@ -153,7 +159,10 @@ const ContactForm = () => {
 
         <div className="flex flex-col gap-2 w-full">
           <div className="flex justify-between items-center">
-            <label className="sm:text-base text-xs text-dim" htmlFor="phone">
+            <label
+              className="sm:text-base text-xs text-primary"
+              htmlFor="phone"
+            >
               Phone Number:
             </label>
           </div>
@@ -171,13 +180,13 @@ const ContactForm = () => {
           <div className="flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
               <label
-                className="sm:text-base text-xs text-dim"
+                className="sm:text-base text-xs text-primary"
                 htmlFor="businessName"
               >
                 Business Name:
               </label>
               <div
-                className={`scale-100 origin-bottom-right text-xs transition-all`}
+                className={`scale-100 origin-bottom-right text-xs transition-all text-dim`}
               >
                 <span className="text-red-500">*</span> required
               </div>
@@ -197,7 +206,7 @@ const ContactForm = () => {
           <div className="flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
               <label
-                className="sm:text-base text-xs text-dim"
+                className="sm:text-base text-xs text-primary"
                 htmlFor="website"
               >
                 Current Website URL (if any):
@@ -217,13 +226,13 @@ const ContactForm = () => {
         <div className="flex flex-col gap-2 w-full">
           <div className="flex justify-between items-center">
             <label
-              className="sm:text-base text-xs text-dim"
+              className="sm:text-base text-xs text-primary"
               htmlFor="projectType"
             >
               What type of project are you interested in?
             </label>
             <div
-              className={`scale-100 origin-bottom-right text-xs transition-all`}
+              className={`scale-100 origin-bottom-right text-xs transition-all text-dim`}
             >
               <span className="text-red-500">*</span> required
             </div>
@@ -262,11 +271,14 @@ const ContactForm = () => {
         <div className="flex items-center sm:flex-row flex-col justify-center w-full gap-6">
           <div className="flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
-              <label className="sm:text-base text-xs text-dim" htmlFor="budget">
+              <label
+                className="sm:text-base text-xs text-primary"
+                htmlFor="budget"
+              >
                 What is your estimated budget?
               </label>
               <div
-                className={`scale-100 origin-bottom-right text-xs transition-all`}
+                className={`scale-100 origin-bottom-right text-xs transition-all text-dim`}
               >
                 <span className="text-red-500">*</span> required
               </div>
@@ -303,13 +315,13 @@ const ContactForm = () => {
           <div className="flex flex-col gap-2 w-full">
             <div className="flex justify-between items-center">
               <label
-                className="sm:text-base text-xs text-dim"
+                className="sm:text-base text-xs text-primary"
                 htmlFor="timeline"
               >
                 What is your estimated timeline?
               </label>
               <div
-                className={`scale-100 origin-bottom-right text-xs transition-all`}
+                className={`scale-100 origin-bottom-right text-xs transition-all text-dim`}
               >
                 <span className="text-red-500">*</span> required
               </div>
@@ -344,13 +356,13 @@ const ContactForm = () => {
         <div className="flex flex-col gap-2 w-full">
           <div className="flex justify-between items-center">
             <label
-              className="sm:text-base text-xs text-dim"
+              className="sm:text-base text-xs text-primary"
               htmlFor="description"
             >
               Project Description:
             </label>
             <div
-              className={`scale-100 origin-bottom-right text-xs transition-all`}
+              className={`scale-100 origin-bottom-right text-xs transition-all text-dim`}
             >
               <span className="text-red-500">*</span> required
             </div>
@@ -369,7 +381,7 @@ const ContactForm = () => {
         <div className="flex flex-col gap-2 w-full">
           <div className="flex justify-between items-center">
             <label
-              className="sm:text-base text-xs text-dim"
+              className="sm:text-base text-xs text-primary"
               htmlFor="inspiration"
             >
               Inspiration Websites (if any):
@@ -389,7 +401,7 @@ const ContactForm = () => {
         <div className="flex flex-col gap-2 w-full">
           <div className="flex justify-between items-center">
             <label
-              className="sm:text-base text-xs text-dim"
+              className="sm:text-base text-xs text-primary"
               htmlFor="additionalInfo"
             >
               Additional Information:

@@ -3,7 +3,7 @@ import React from "react";
 const SmallLoader = ({
   bgColor = "none",
   color = "white",
-  size = 8,
+  size = 30,
 }: {
   bgColor?: string;
   color?: string;
@@ -13,8 +13,10 @@ const SmallLoader = ({
     <div role="status">
       <svg
         aria-hidden="true"
-        className={`inline w-${size} h-${size} animate-spin`}
+        className={`inline animate-spin`}
         viewBox="0 0 100 101"
+        width={size}
+        height={size}
         fill={color}
         xmlns="http://www.w3.org/2000/svg"
       >
