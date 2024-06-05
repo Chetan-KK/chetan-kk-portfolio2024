@@ -27,7 +27,7 @@ const config: Config = {
     },
     extend: {
       colors: {
-        primary: "hsl(var(--primary))",
+        primary: "hsla(var(--primary))",
 
         secondary: "hsla(var(--secondary))",
 

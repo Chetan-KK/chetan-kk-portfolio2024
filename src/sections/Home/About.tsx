@@ -50,7 +50,7 @@ const About = () => {
           speed={10}
           scale={[0.7, 1.3]}
           rotate={["0deg", "5deg"]}
-          className="md:absolute bottom-0 lg:leading-10 sm:leading-9 leading-6 lg:text-xl sm:text-lg text-sm text-justify xl:left-[37%] lg:left-[20%] left-[10%] text-white/90 lg:w-[45rem] w-auto p-7"
+          className="md:absolute bottom-0 lg:leading-10 sm:leading-9 leading-6 lg:text-xl sm:text-lg text-sm text-justify xl:left-[37%] lg:left-[20%] left-[10%] text-primary/90 lg:w-[45rem] w-auto p-7"
         >
           <div
             ref={parallax.ref}

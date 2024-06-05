@@ -66,6 +66,10 @@ textarea:focus {
   outline: none;
 }
 
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .stoked-text {
   position: relative;
   display: inline-block;
@@ -235,7 +239,7 @@ textarea:focus {
   height: 100%;
 }
 .project-box {
-  transition: box-shadow 300ms, scale 300ms;
+  transition: border 300ms, scale 300ms;
 }
 .project-box:hover {
   scale: 1.01;
@@ -261,3 +265,5 @@ textarea:focus {
     /* grid-column: auto; */
   }
 }
+
+/* searchbar in projects */

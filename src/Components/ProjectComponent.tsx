@@ -14,7 +14,7 @@ const ProjectComponent = ({ project, index }: any) => {
       variants={index % 2 == 0 ? FastRightStep : FastLeftStep}
       initial="hidden"
       whileInView="show"
-      className="project-box my-10 bg-secondary/30 p-5 sm:rounded-3xl rounded-xl  border-2 hover:border-white border-white/20 sm:hover:shadow-[0_0_0_2px] shadow-[0_0_60px_-10px] shadow-secondary hover:shadow-[0_0_0_1px]"
+      className="project-box my-10 bg-secondary/30 p-5 sm:rounded-3xl rounded-xl  border-2 hover:border-primary border-primary/20 shadow-[0_0_60px_-10px] shadow-secondary"
     >
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">

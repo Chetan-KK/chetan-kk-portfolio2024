@@ -18,7 +18,7 @@ const WideProjectCard = ({
     <Parallax
       translateX={index % 2 == 0 ? ["-30px", "100px"] : ["30px", "-100px"]}
       easing="easeInQuad"
-      className="project-box my-10 bg-secondary/30 sm:rounded-3xl rounded-xl border-2 hover:border-white border-white/20 sm:hover:shadow-[0_0_0_2px] shadow-[0_0_60px_-10px] shadow-secondary hover:shadow-[0_0_0_1px]"
+      className="project-box my-10 bg-secondary/30 sm:rounded-3xl rounded-xl border-2 hover:border-primary border-primary/20 shadow-[0_0_60px_-10px] shadow-secondary"
     >
       <Link
         href={`/projects/${project.title}`}
