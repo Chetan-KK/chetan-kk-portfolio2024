@@ -58,6 +58,7 @@ const Hero2 = () => {
             "slide-bottom font-bold uppercase lg:text-8xl text-6xl"
           )}
         >
+          {/* somewhere add from india with india flag 😀 */}
           Chetan Khulage
         </div>
       </Parallax>

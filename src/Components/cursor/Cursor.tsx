@@ -3,8 +3,10 @@ import styles from "./cursor.module.css";
 
 import { useState, useEffect } from "react";
 import { motion, useMotionValue } from "framer-motion";
-import PhArrowSquareInLight from "@/assets/PhArrowSquareInLight";
-import MaterialSymbolsLightEyeTrackingOutlineSharp from "@/assets/MaterialSymbolsLightEyeTrackingOutlineSharp";
+import {
+  MaterialSymbolsLightEyeTrackingOutlineSharp,
+  PhArrowSquareInLight,
+} from "@/assets/Icons";
 import { useScreenSize } from "@/lib/contexts/ScreenSizeContext";
 
 const Cursor = () => {

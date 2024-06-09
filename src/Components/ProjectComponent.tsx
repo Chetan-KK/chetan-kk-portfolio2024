@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FastLeftStep, FastRightStep } from "@/lib/initAnimationSteps";
-import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowForwardRounded";
+import { MaterialSymbolsArrowForwardRounded } from "@/assets/Icons";
 import { ParallaxBanner } from "react-scroll-parallax";
 import { useScreenSize } from "@/lib/contexts/ScreenSizeContext";
 

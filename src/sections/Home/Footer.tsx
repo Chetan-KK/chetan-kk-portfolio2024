@@ -28,6 +28,7 @@ const Footer = () => {
         priority
         width={750}
       />
+      Powered by
       <h1 className="font-bold text-dim uppercase sm:text-3xl text-xl">
         Social Links
       </h1>

@@ -2,9 +2,7 @@
 
 import React, { useState } from "react";
 import axios from "axios";
-import SuperHeading from "@/Components/SuperHeading";
 import Button from "@/Components/Button/Button";
-import { cn } from "@/lib/utils";
 import SmallLoader from "@/Components/SmallLoader";
 import Footer from "@/sections/Home/Footer";
 import MaxWidthWrapper from "@/Components/MaxWidthWrapper";

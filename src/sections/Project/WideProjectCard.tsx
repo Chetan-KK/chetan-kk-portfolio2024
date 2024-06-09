@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import MaterialSymbolsArrowForwardRounded from "@/assets/MaterialSymbolsArrowForwardRounded";
+import { MaterialSymbolsArrowForwardRounded } from "@/assets/Icons";
 import { useScreenSize } from "@/lib/contexts/ScreenSizeContext";
 import { Project } from "@/lib/getData/dataInterfaces";
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
@@ -16,7 +16,8 @@ const WideProjectCard = ({
 
   return (
     <Parallax
-      translateX={index % 2 == 0 ? ["-30px", "100px"] : ["30px", "-100px"]}
+      speed={0}
+      scale={[0.8, 1.4]}
       easing="easeInQuad"
       className="project-box my-10 bg-secondary/30 sm:rounded-3xl rounded-xl border-2 hover:border-primary border-primary/20 shadow-[0_0_60px_-10px] shadow-secondary"
     >
