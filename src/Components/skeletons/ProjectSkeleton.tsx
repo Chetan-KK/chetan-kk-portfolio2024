@@ -7,7 +7,7 @@ const ProjectSkeleton = () => {
       <div className="">
         <div className="flex justify-between items-center">
           <div className="h-10 w-96 bg-primary/30 rounded-lg uppercase text-4xl font-bold"></div>
-          projects loading...
+          <p className="text-primary">projects loading...</p>
           <div className=" flex items-center justify-center h-10 w-10 bg-primary/30 rounded-lg">
             <SmallLoader />
           </div>

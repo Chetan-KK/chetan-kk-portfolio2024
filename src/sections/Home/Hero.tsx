@@ -42,7 +42,12 @@ const Hero2 = () => {
         translateX={["-400px", "100px"]}
         className="overflow-hidden"
       >
-        <div className={cn(poppins.className, "slide-bottom font-light")}>
+        <div
+          className={cn(
+            poppins.className,
+            "text-primary slide-bottom font-light"
+          )}
+        >
           {"👋🏻 Hello, I'm"}
         </div>
       </Parallax>
@@ -55,7 +60,7 @@ const Hero2 = () => {
         <div
           className={cn(
             poppins.className,
-            "slide-bottom font-bold uppercase lg:text-8xl text-6xl"
+            "slide-bottom text-primary font-bold uppercase lg:text-8xl text-6xl"
           )}
         >
           {/* somewhere add from india with india flag 😀 */}
@@ -72,7 +77,7 @@ const Hero2 = () => {
           <span
             className={cn(
               poppins.className,
-              "slide-bottom font-light mr-4 whitespace-nowrap"
+              "slide-bottom text-primary font-light mr-4 whitespace-nowrap"
             )}
           >
             {"I'm a"}

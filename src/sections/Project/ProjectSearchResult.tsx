@@ -44,11 +44,20 @@ const ProjectSearchResult = ({
           } uppercase font-bold flex items-center gap-3`}
         >
           {SingleProject.title}
-          {/* <MaterialSymbolsArrowForwardRounded height={40} width={40} /> */}
         </div>
         <div className={`${isWide ? "text-sm" : "text-sm"} text-dim w-fit`}>
           {SingleProject.desc.split(" ").slice(0, 17).join(" ")}...
-          {/* <MaterialSymbolsArrowForwardRounded height={40} width={40} /> */}
+        </div>
+        <div
+          className={`${
+            isWide ? "" : ""
+          } mt-3 text-xs whitespace-nowrap flex justify-start flex-wrap gap-1`}
+        >
+          {SingleProject.stack.map((lang, _) => (
+            <div key={_} className="py-0.5  rounded-md px-2 bg-dark">
+              {lang}
+            </div>
+          ))}
         </div>
       </div>
     </Link>

@@ -126,7 +126,7 @@ const Preloader = () => {
         <div className="bg-year translate-y-12 opacity-0 h-full grid place-content-center text-dark md:text-[25rem] text-[10rem]">
           <div>2024</div>
         </div>
-        <div className="count-slide sm:text-7xl text-3xl">
+        <div className="count-slide text-primary sm:text-7xl text-3xl">
           <span className="count">0</span>%
         </div>
         <div className="loader"></div>

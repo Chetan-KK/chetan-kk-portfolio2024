@@ -1,5 +1,9 @@
 "use client";
 
+import {
+  MaterialSymbolsArrowForwardRounded,
+  PhArrowSquareInLight,
+} from "@/assets/Icons";
 import Button from "@/Components/Button/Button";
 import MaxWidthWrapper from "@/Components/MaxWidthWrapper";
 import ProjectSkeleton from "@/Components/skeletons/ProjectSkeleton";
@@ -84,8 +88,31 @@ const Project = () => {
             {project.stack.join(", ")}.
           </div>
           <div className="sm:flex justify-between items-center content-center">
-            <div className="md:leading-[3rem] sm:leading-9 leading-7 lg:max-w-[40vw] w-full text-dim md:first-letter:text-6xl sm:first-letter:text-4xl first-letter:text-3xl first-letter:text-primary md:text-xl sm:text-lg text-sm my-10">
+            <div className="md:leading-[3rem] sm:leading-9 leading-7 lg:max-w-[40vw] w-full text-dim md:first-letter:text-6xl sm:first-letter:text-4xl first-letter:text-3xl first-letter:text-primary md:text-xl sm:text-lg text-sm my-10 text-justify">
               {project.desc}
+              {/* buttons will be here */}
+              <div className="flex items-center gap-5 mt-5 ">
+                <a
+                  href={project.gitLink}
+                  className="target mt-2"
+                  target="_blank"
+                >
+                  <Button className="p-2 hover:!bg-dark">
+                    <Image
+                      className="sm:h-10 h-5 w-5 sm:w-10"
+                      src={"/icons/Github.svg"}
+                      height={70}
+                      width={70}
+                      alt="insta"
+                    />
+                  </Button>
+                </a>
+                <a href={project.link} className="target" target="_blank">
+                  <Button className="px-4 flex items-center gap-2">
+                    Live Preview <PhArrowSquareInLight className="text-2xl" />
+                  </Button>
+                </a>
+              </div>
             </div>
             <div className="">
               <Parallax
@@ -93,7 +120,7 @@ const Project = () => {
                 translateX={[10, -10]}
                 className={cn(
                   bebasNeue.className,
-                  "text-center lg:text-[20rem] lg:mb-0 mb-10 text-9xl text-dark"
+                  "text-center lg:text-[20rem] lg:mb-0 mb-10 text-9xl text-dark whitespace-nowrap"
                 )}
               >
                 {project.year}

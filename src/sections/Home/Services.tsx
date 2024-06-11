@@ -46,7 +46,9 @@ const Services = () => {
                 : "max-w-[40rem] sm:mx-auto mx-5"
             } gap-3 p-5 border-2 border-border bg-secondary/50 rounded-xl`}
           >
-            <div className="sm:text-2xl font-bold">{service.title}</div>
+            <div className="sm:text-2xl font-bold text-primary">
+              {service.title}
+            </div>
             <div className="sm:text-base text-xs text-dim">{service.desc}</div>
           </Parallax>
         ))}

@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import fetchInfo from "@/lib/getData/getInfo";
 import { MyInfo } from "@/lib/getData/dataInterfaces";
 import Available from "@/Components/Available";
+import SmallLoader from "@/Components/SmallLoader";
 
 const Footer = () => {
   const [infoData, setInfoData] = useState<MyInfo>();
@@ -28,7 +29,7 @@ const Footer = () => {
         priority
         width={750}
       />
-      Powered by
+      {/* <p className="text-primary">Powered by </p> */}
       <h1 className="font-bold text-dim uppercase sm:text-3xl text-xl">
         Social Links
       </h1>
@@ -72,7 +73,7 @@ const Footer = () => {
           </a>
         </div>
       ) : (
-        <div></div>
+        <SmallLoader />
       )}
       <div className="mt-5 sm:flex justify-between w-full items-center">
         <div className="text-dim font-light sm:text-base text-xs sm:mb-0 mb-5 text-center">

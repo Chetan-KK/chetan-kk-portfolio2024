@@ -33,7 +33,11 @@ const AllProjects = () => {
             <ProjectComponent key={i} project={project} index={i} />
           ))
         ) : (
-          <ProjectSkeleton />
+          <>
+            <ProjectSkeleton />
+            <ProjectSkeleton />
+            <ProjectSkeleton />
+          </>
         )}
       </div>
       <Contact />

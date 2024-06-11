@@ -106,7 +106,7 @@ const Contact = () => {
             <div
               className={`${
                 isEmailRequired ? "scale-100 origin-bottom-right" : "scale-0"
-              } text-xs transition-all`}
+              } text-xs transition-all text-primary`}
             >
               <span className="text-red-500">*</span> required
             </div>
@@ -137,7 +137,7 @@ const Contact = () => {
             <div
               className={`${
                 isMessageRequired ? "scale-100 origin-bottom-right" : "scale-0"
-              } text-xs transition-all`}
+              } text-xs transition-all text-primary`}
             >
               <span className="text-red-500">*</span> required
             </div>
